@@ -16,9 +16,9 @@ function logView () {
             </div>
             <div class="journal-container">
               <h3 class="journal-header">Journal</h3>
-              <textarea id="journal" cols="30" rows="5" placeholder="How was your day?"></textarea>
+              <textarea id="journal" cols="30" rows="5" placeholder="How was your day?" onkeyup="journalInput(this)"></textarea>
               <h3 class="reflections-header">Reflections</h3>
-              <textarea id="reflections" cols="30" rows="5" placeholder="How are you feeling?"></textarea>
+              <textarea id="reflections" cols="30" rows="5" placeholder="How are you feeling?" onkeyup="reflectionInput(this)"></textarea>
             </div>
         </div>
       </div>
@@ -63,5 +63,16 @@ drinkList.addEventListener('click', event => {
 
 function logDrink () {
   // function to save log somewhere in the model
+}
+
+// saving user input from both Journal and Reflections
+function journalInput(journalInput){
+  let journalValue = journalInput.value;
+  console.log(journalValue);
+}
+
+function reflectionInput(reflectionInput){
+  let reflectionValue = reflectionInput.value;
+  console.log(reflectionValue);
 }
 
