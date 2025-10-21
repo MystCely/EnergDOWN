@@ -16,8 +16,8 @@ const model = {
         logPage: {
             title: "Log",
             customDrink: "",
-            journal: "",
-            reflections: "",
+            journal: [],
+            reflections: [],
             timeAsleep: {
                 currentDay: "",
                 totalHours: "",
