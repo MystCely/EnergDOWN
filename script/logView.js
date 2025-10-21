@@ -5,9 +5,12 @@ logView();
 function logView () {
   app.innerHTML = `
     <div class="main-container">
-    <!--    Add  picture tomorrow-->
-    <!--      <img src="img/back-icon.png" alt="back-icon">-->
-      <h1 class="log-header">Log</h1>
+        <div class="header-container">
+          <img src="../img/back-btn.png" alt="back button" class="back-btn" onclick="backToProfile()">
+          <img src="../img/reset-btn.png" alt="reset button" class="reset-btn" onclick="resetLog()">
+           <h1 class="log-header">Log</h1>
+        </div>
+        <hr>
       <div class="drink-list-container">
         <ul id="drinkList"></ul>
         <div class="log-container">
@@ -76,3 +79,10 @@ function reflectionInput(reflectionInput){
   console.log(reflectionValue);
 }
 
+function backToProfile() {
+  // go back to profilePage
+}
+
+function resetLog () {
+  // button to reset what was written on log
+}
