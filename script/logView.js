@@ -1,6 +1,6 @@
 function logView () {
 
-  return `
+  return /*HTML*/`
     <div class="main-container">
         <div class="header-container">
           <img src="../img/back-btn.png" alt="back button" class="back-btn" onclick="backToProfile()">
@@ -46,6 +46,7 @@ function showDrinkList () {
     li.dataset.caffein = drink.caffein;
 
     drinkList.appendChild(li);
+
   });
 
 }
