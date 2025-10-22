@@ -1,12 +1,10 @@
+const appDiv = document.getElementById("app");
+
 function updateView() {
     const currentPage = model.app.currentPage;
-    const appDiv = document.getElementById("app");
-
     if(currentPage === 'homepage'){
-        
+        // homePage
     }
-
-   
 
     else if (currentPage === 'logInPage') {
         appDiv.innerHTML = loginView();
@@ -21,15 +19,8 @@ function updateView() {
     }
 
     else if (currentPage === 'logView') {
-        appDiv.innerHTML = logView();
+        logView();
     }
-
-
-
-
-
-
-
 
 }
 

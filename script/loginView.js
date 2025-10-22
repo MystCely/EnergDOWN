@@ -38,8 +38,8 @@ function logInButton() {
     let password = model.viewState.logInPage.password
     let correctinfo = false
     for(let i=0; i<model.data.users.length; i++) {
-        if(username == model.data.users[i].username || 
-            password == model.data.users[i].password) {
+        if(username === model.data.users[i].username ||
+            password === model.data.users[i].password) {
                 //Må lagre info et sted, evt id??
                 correctinfo = true
             }

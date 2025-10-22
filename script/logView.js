@@ -1,6 +1,5 @@
 function logView () {
-
-  return /*HTML*/`
+  appDiv.innerHTML = `
     <div class="main-container">
         <div class="header-container">
           <img src="../img/back-btn.png" alt="back button" class="back-btn" onclick="backToProfile()">
@@ -28,13 +27,10 @@ function logView () {
       <button id="saveLogBtn" onclick="logDrink()">Add</button>
     </div>
     `;
-}
 
-const drinkList = document.getElementById('drinkList');
-const drinkInfo = document.getElementById('drinkInformation');
+  const drinkList = document.getElementById('drinkList');
+  const drinkInfo = document.getElementById('drinkInformation');
 
-showDrinkList();
-function showDrinkList () {
   // display as a list
   model.data.drinkList.forEach(drink => {
     const li = document.createElement('li');
@@ -49,18 +45,18 @@ function showDrinkList () {
 
   });
 
-}
-
-// event listener to show chosen drink
-drinkList.addEventListener('click', event => {
-  if (event.target.tagName === 'LI') {
-    const { name, size, caffein } = event.target.dataset;
-    drinkInfo.innerHTML =
-      `<p class="drink-title">${name}</p>
+  // event listener to show chosen drink
+  drinkList.addEventListener('click', event => {
+    if (event.target.tagName === 'LI') {
+      const { name, size, caffein } = event.target.dataset;
+      drinkInfo.innerHTML =
+        `<p class="drink-title">${name}</p>
        <p class="drink-info">Size: ${size}</p>
        <p class="drink-info">Caffein: ${caffein}</p>`;
-  }
-});
+    }
+  });
+
+}
 
 function logDrink () {
   // function to save log somewhere in the model
