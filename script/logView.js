@@ -1,9 +1,6 @@
-const app = document.getElementById('app');
-
-logView();
-
 function logView () {
-  app.innerHTML = `
+
+  return `
     <div class="main-container">
         <div class="header-container">
           <img src="../img/back-btn.png" alt="back button" class="back-btn" onclick="backToProfile()">

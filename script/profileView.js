@@ -22,6 +22,7 @@ let logOpen = false;
 function profilePageViewUpdate() {
    let HTML = ''; 
    HTML = /*HTML*/ `
+   <button onclick="changePage('logView')">test</button>
    <h1>@username</h1>
    <h1 id="OpenLogCloseLog" onclick="ToogleLog()">+</h1>
    <button onclick="peptalkButton()">PepTalks</button>

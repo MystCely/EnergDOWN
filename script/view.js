@@ -20,6 +20,10 @@ function updateView() {
         appDiv.innerHTML= profilePageViewUpdate();
     }
 
+    else if (currentPage === 'logView') {
+        appDiv.innerHTML = logView();
+    }
+
 
 
 
@@ -28,3 +32,5 @@ function updateView() {
 
 
 }
+
+window.onload = () => updateView();
