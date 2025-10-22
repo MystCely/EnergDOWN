@@ -3,7 +3,7 @@
 function loginView() {
     let HTML = '';
     HTML = document.getElementById('app').innerHTML = /*HTML*/`
-    <button onclick="changePage('logView')">test</button>
+    <button onclick="changePage('profilePage')">Profile</button>
     
     <section>
         <h1>
