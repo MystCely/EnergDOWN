@@ -74,9 +74,9 @@ function reflectionInput(reflectionInput){
 }
 
 function backToProfile() {
-  // go back to profilePage
+  appDiv.innerHTML= profilePageViewUpdate();
 }
 
 function resetLog () {
-  // button to reset what was written on log
+  logView();
 }
