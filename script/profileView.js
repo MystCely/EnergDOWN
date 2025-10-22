@@ -11,9 +11,10 @@
 
 
 //model
+
 let bakgrunn =false;
 let logOpen = false;
-let SavedGoalChecklists = []
+
 
 
 //view
@@ -22,7 +23,7 @@ function profilePageViewUpdate() {
    let appDiv = document.getElementById("app");
    appDiv.innerHTML = /*HTML*/ `
    <h1>@username</h1>
-   <h1 onclick="ToogleLog()">+</h1>
+   <h1 id="OpenLogCloseLog" onclick="ToogleLog()">+</h1>
    <button onclick="peptalkButton()">PepTalks</button>
    <div id="peptalktext"></div>
    <div><span><h1>Personal goals</h1></span>
@@ -43,17 +44,26 @@ function profilePageViewUpdate() {
             </select>
 
     
-    <br>
-    <br>
+    
+    
+
     <h2>Todays caffain:</h2>
-    <h2 id="showTodayCaffain"></h2>
+    <h2 id="showTodayCaffeine"></h2>
     <br>
     <h2>Total caffain:</h2>
-    <h2 id="ShowTotalCaffain"></h2>
+    <h2 id="ShowTotalCaffeine"></h2>
     <br>
+    <br>
+    <br>
+    <br>
+    <button onclick="addCaffeine(80)">kaffe (80mg)</button>
+    <button onclick="addCaffeine(40)">te (40mg)</button>
+    <button onclick="addCaffeine(120)">Energidrikk (120mg)</button>
 
    </div>
 
+   <br>
+   <br>
    <button onclick="Spenndende()">Steph's knapp</button>
    
    
@@ -64,24 +74,21 @@ function profilePageViewUpdate() {
 
 //controller
 
+function addCaffeine(amount){
+    const progress = model.viewState.profilePage.progress;
+    progress.todaysCaffeine += amount;
+    progress.totalCaffeine += amount;
 
-/*function ToogleLog(){
-    if(logOpen){
-        model.data.currentPage.profilePage
+    document.getElementById("showTodayCaffeine").innerText = progress.todaysCaffeine +  "mg";
+    document.getElementById("ShowTotalCaffeine").innerText = progress.totalCaffeine + " mg";
+
+}
 
 
+function ToogleLog(){
 
-        logOpen = false; 
-        
-    }
-
-    else(logOpen){
-        model.data.currentPage.logPage
-
-        logOpen = true;
-    }
-
-} */  //toogle funkjon til senere
+    
+}
 
 
 function SaveGoal(){
@@ -94,14 +101,20 @@ function peptalkButton() {
 };
 
 
+
+
+
+
 function Spenndende(){
     if(bakgrunn === false){
     document.body.style.backgroundColor = 'green';
+    document.body.style.color = 'red';
     
     bakgrunn = true;
 }
     else{
         document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
 
         bakgrunn = false;
     }
