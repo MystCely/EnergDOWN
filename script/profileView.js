@@ -20,8 +20,8 @@ let logOpen = false;
 //view
 
 function profilePageViewUpdate() {
-   let appDiv = document.getElementById("app");
-   appDiv.innerHTML = /*HTML*/ `
+   let HTML = ''; 
+   HTML = /*HTML*/ `
    <h1>@username</h1>
    <h1 id="OpenLogCloseLog" onclick="ToogleLog()">+</h1>
    <button onclick="peptalkButton()">PepTalks</button>
@@ -70,6 +70,7 @@ function profilePageViewUpdate() {
    
    
    `
+   return HTML;
 }
 
 //controller
