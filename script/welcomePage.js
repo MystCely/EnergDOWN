@@ -1,3 +1,6 @@
+welcomeView()
+
+
 function welcomeView() {
     appDiv.innerHTML = /*HTML*/`
     
@@ -13,4 +16,6 @@ function welcomeView() {
     <button onclick="changePage('logInPage')">Log In</button>
     <button onclick="changePage('signUpPage')">Sign Up</button>
     `
+
+    return HTML
 }
