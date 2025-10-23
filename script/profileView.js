@@ -65,12 +65,7 @@ function profilePageViewUpdate() {
    <br>
    <br>
    <button onclick="Spenndende()">Steph's knapp</button>
-   
-   
-   
-   
-   `
-   return HTML;
+   `;
 }
 
 //controller

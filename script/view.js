@@ -2,20 +2,25 @@ const appDiv = document.getElementById("app");
 
 function updateView() {
     const currentPage = model.app.currentPage;
-    if(currentPage === 'homepage'){
-        // homePage
+
+    if (currentPage === "welcomePage") {
+      welcomeView();
+    }
+
+    if (currentPage === 'homepage'){
+        // homePage;
     }
 
     else if (currentPage === 'logInPage') {
-        appDiv.innerHTML = loginView();
+        loginView();
     }
 
     else if (currentPage === 'signUpPage'){
-        appDiv.innerHTML = signupView();
+        signupView();
     }
 
     else if (currentPage === 'profilePage'){
-        appDiv.innerHTML= profilePageViewUpdate();
+       profilePageViewUpdate();
     }
 
     else if (currentPage === 'logView') {

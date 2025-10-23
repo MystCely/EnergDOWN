@@ -30,8 +30,6 @@ function signupView() {
     </div>
     </section>
     `;
-
-    return HTML
 }
 
 function SignUpButton() {

@@ -18,10 +18,7 @@ function loginView() {
         </button>
     </section>
     
-    
     `;
-
-    return HTML
 }
 
 function saveUserName(value) {

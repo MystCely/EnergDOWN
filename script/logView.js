@@ -1,5 +1,5 @@
 function logView () {
-  appDiv.innerHTML = `
+  appDiv.innerHTML = /*html*/ `
     <div class="main-container">
         <div class="header-container">
           <img src="../img/back-btn.png" alt="back button" class="back-btn" onclick="backToProfile()">
@@ -74,7 +74,7 @@ function reflectionInput(reflectionInput){
 }
 
 function backToProfile() {
-  appDiv.innerHTML= profilePageViewUpdate();
+  profilePageViewUpdate();
 }
 
 function resetLog () {
