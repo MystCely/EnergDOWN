@@ -1,8 +1,7 @@
-welcomeView()
-
 
 function welcomeView() {
-    appDiv.innerHTML = /*HTML*/`
+    let HTML = '';
+    HTML = /*HTML*/`
     
     <div>
         <h1>
