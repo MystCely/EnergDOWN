@@ -1,7 +1,6 @@
 const appDiv = document.getElementById("app");
 
 function updateView() {
-    
     const currentPage = model.app.currentPage;
 
     if (currentPage === "welcomePage") {
@@ -10,10 +9,6 @@ function updateView() {
 
     if (currentPage === 'homepage'){
         // homePage;
-    }
-
-    else if(currentPage === 'welcomePage'){
-        appDiv.innerHTML = welcomeView();
     }
 
     else if (currentPage === 'logInPage') {
