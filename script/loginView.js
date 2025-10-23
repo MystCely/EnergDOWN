@@ -1,8 +1,7 @@
 
 // loginView() //Denne skal bort (TEST)
 function loginView() {
-    let HTML = '';
-    HTML = document.getElementById('app').innerHTML = /*HTML*/`
+    appDiv.innerHTML = /*HTML*/`
     <button onclick="changePage('profilePage')">Profile</button>
     
     <section>

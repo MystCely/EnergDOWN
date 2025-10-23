@@ -1,8 +1,7 @@
 // signupView()
 
 function signupView() {
-    let HTML = '';
-    HTML = document.getElementById('app').innerHTML = /*HTML*/`
+    appDiv.innerHTML = /*HTML*/`
     <button onclick="changePage('profilePage')">profile</button>
     
     <section>

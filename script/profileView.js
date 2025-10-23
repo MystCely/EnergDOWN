@@ -20,8 +20,7 @@ let logOpen = false;
 //view
 
 function profilePageViewUpdate() {
-   let HTML = ''; 
-   HTML = /*HTML*/ `
+   appDiv.innerHTML = /*HTML*/ `
    <button onclick="changePage('logView')">Log</button>
    <h1>@username</h1>
    <h1 id="OpenLogCloseLog" onclick="ToogleLog()">+</h1>

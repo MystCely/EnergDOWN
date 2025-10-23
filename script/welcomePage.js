@@ -2,8 +2,7 @@ welcomeView()
 
 
 function welcomeView() {
-    let HTML = '';
-    HTML = document.getElementById('app').innerHTML = /*HTML*/`
+    appDiv.innerHTML = /*HTML*/`
     
     <div>
         <h1>
