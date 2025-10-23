@@ -21,12 +21,12 @@ let logOpen = false;
 
 function profilePageViewUpdate() {
    appDiv.innerHTML = /*HTML*/ `
-   <button onclick="changePage('logView')">Log</button>
-   <h1>@username</h1>
-   <h1 id="OpenLogCloseLog" onclick="ToogleLog()">+</h1>
-   <button onclick="peptalkButton()">PepTalks</button>
-   <div id="peptalktext"></div>
-   <div><span><h1>Personal goals</h1></span>
+   <h1 class="log-btn-container">@username</h1> 
+   <label><h1 id="OpenLogCloseLog" onclick="changePage('logView')" class="LogButton";>+</h1></label>
+   <div class="profilePictureJustForShow"></div>
+   <button class="peptalkButtonAndText" onclick="peptalkButton()">PepTalks</button>
+   <div class="peptalkTextPos" id="peptalktext"></div>
+   <div class="personalGoals"><span><h1>Personal goals</h1></span>
    <label>
    <input type="checkbox"> En kopp kaffe (forslag)<label>
    <br>
@@ -64,7 +64,7 @@ function profilePageViewUpdate() {
 
    <br>
    <br>
-   <button onclick="Spenndende()">Steph's knapp</button>
+   
    `;
 }
 
