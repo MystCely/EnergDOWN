@@ -66,6 +66,29 @@ hr {
     cursor: pointer;
 }
 
+#customDrink {
+    list-style-type: none;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #9D9D9D;
+    color: #FFFFFF;
+
+    width: 150px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.custom-drink-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.drink-input {
+    width: 100px;
+}
+
 .drink-list-item:hover {
     background-color: #444444;
 }
