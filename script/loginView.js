@@ -41,8 +41,8 @@ function logInButton() {
             }
     }
     if(correctinfo) {
-        //Sendte til riktig side, (homepage)
-        console.log("Yey logget inn")
+        //Sendte til riktig side, (homepage,ProfilePafe)
+        changePage('profilePage')
         emptyLogInValue()
     }
     else if(!correctinfo) {

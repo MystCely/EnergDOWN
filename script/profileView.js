@@ -19,7 +19,7 @@ let logOpen = false
 
 function profilePageViewUpdate() {
    appDiv.innerHTML = /*HTML*/ `
-   <h1 class="log-btn-container">@username</h1> 
+   <h1 class="log-btn-container">@${model.data.users[0].username}</h1>
    <label><h1 id="OpenLogCloseLog" onclick="changePage('logView')" class="LogButton";>+</h1></label>
    <div class="profilePictureJustForShow"></div>
    <button class="peptalkButtonAndText" onclick="peptalkButton()">PepTalks</button>
