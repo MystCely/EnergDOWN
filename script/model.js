@@ -37,6 +37,7 @@ const model = {
             },
 
             personalGoal: { // do we need this ?
+                goalList: [],
                 daily: [""],
                 weekly: [""],
                 monthly: [""],

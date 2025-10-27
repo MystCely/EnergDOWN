@@ -10,10 +10,8 @@
     */
 
 
-//model
-
 let bakgrunn =false;
-let logOpen = false;
+let logOpen = false
 
 
 
@@ -26,15 +24,14 @@ function profilePageViewUpdate() {
    <div class="profilePictureJustForShow"></div>
    <button class="peptalkButtonAndText" onclick="peptalkButton()">PepTalks</button>
    <div class="peptalkTextPos" id="peptalktext"></div>
+
+
    <div class="personalGoals"><span><h1>Personal goals</h1></span>
-   <label>
-   <input type="checkbox"> En kopp kaffe (forslag)<label>
    <br>
    <br>
-   <input type="text" placeholder="Create new goal" onchange="SaveGoal(this.value)">
-   <button onclick="">add</button>
-   <p id="personalGoals"><p>
-   <p id="ChecklistGoals"></p>
+   <div id="list"></div>
+   <input id="GoalText" type="text" placeholder="Create new goal">
+   <button id="AddToListButton">add</button>
    <br>
    <form><label for="choose"></label></form>
             <select id="choose" name="choices">
@@ -64,11 +61,63 @@ function profilePageViewUpdate() {
 
    <br>
    <br>
+
+   
    
    `;
+
+   let input = document.getElementById('GoalText');
+   let AddToListButton = document.getElementById('AddToListButton');
+
+
+AddToListButton.addEventListener('click', () => {
+    let GoalText = input.value.trim();
+    if(GoalText === '') return;
+
+    model.viewState.profilePage.personalGoal.goalList.push(GoalText)
+
+    input.value = '';
+    input.focus()
+
+    SaveGoals()
+
+})
+
+AddToListButton.addEventListener('keydown', e => {
+    if (e.key === 'Enter') AddToListButton.click();
+});
+
+SaveGoals()
+
 }
 
 //controller
+
+function SaveGoals(){
+    let list = document.getElementById('list');
+
+    list.innerHTML = '';
+    if(!list) return;
+    
+    list.innerHTML = '';
+
+    let goalList = model.viewState.profilePage.personalGoal.goalList;
+
+    for (let i = 0; i < goalList.length; i++) {
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `goal-${i}`;
+
+        let label = document.createElement('label');
+        label.htmlFor = checkbox.id;
+        label.textContent = goalList[i];
+
+        list.appendChild(checkbox);
+        list.appendChild(label);
+        list.appendChild(document.createElement('br'));
+    }
+}
+
 
 function addCaffeine(amount){
     const progress = model.viewState.profilePage.progress;
@@ -87,9 +136,7 @@ function ToogleLog(){
 }
 
 
-function SaveGoal(){
 
-}
 
 function peptalkButton() {
     let randombutton = model.data.pepTalks[Math.floor(Math.random() * model.data.pepTalks.length)];
