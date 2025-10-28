@@ -2,16 +2,19 @@
 /* Min checklist:
     Peptalk (x)
     Add knapp (x)
-    Create new goal side ()
-    total caffain ()
-    coffain so far ()
+    Create new goal (x)
+    Peptalk når siden lastes førstegang (x)
+    total caffain () koble til Steph sine
+    coffain so far () koble til Steph sine
     Graf()
 
     */
 
 
-let bakgrunn =false;
-let logOpen = false
+/*let bakgrunn =false;
+let logOpen = false 
+
+*/ // evt toogle knapp til logg + Steph's knapp
 
 
 
@@ -22,14 +25,16 @@ function profileView() {
    <h1 class="log-btn-container">@${model.data.users[0].username}</h1>
    <label><h1 id="OpenLogCloseLog" onclick="changePage('logView')" class="LogButton";>+</h1></label>
    <div class="profilePictureJustForShow"></div>
+
    <button class="peptalkButtonAndText" onclick="peptalkButton()">PepTalks</button>
    <div class="peptalkTextPos" id="peptalktext"></div>
 
 
    <div class="personalGoals"><span><h1>Personal goals</h1></span>
    <br>
-   <br>
    <div id="list"></div>
+   <br>
+   <br>
    <input id="GoalText" type="text" placeholder="Create new goal">
    <button id="AddToListButton">add</button>
    <br>
@@ -41,9 +46,6 @@ function profileView() {
             </select>
 
     
-    
-    
-
     <h2>Todays caffain:</h2>
     <h2 id="showTodayCaffeine"></h2>
     <br>
@@ -62,9 +64,37 @@ function profileView() {
    <br>
    <br>
 
+   <h1>Progress</h1>
+   <div><dl>1000 mg</dl>
+   <br>
+   <br>
+   <dl>500 mg</dl>
+   <br>
+   <br>
+   <dl>250 mg</dl>
+   <br>
+   <dl>100 mg</dl>
+   <br>
+   <dl>0 mg</dl>
+   </div>
+
+   <div class="weekdays">
+   <p>Mon</p>
+   <p>tue</p>
+   <p>wed</p>
+   <p>thurs</p>
+   <p>fri</p>
+   <p>sat</p>
+   <p>sun</p>
+   </div>
+
    
    
    `;
+
+   peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
+   updateCaffeineDisplay()
+
 
    let input = document.getElementById('GoalText');
    let AddToListButton = document.getElementById('AddToListButton');
@@ -93,62 +123,14 @@ SaveGoals()
 
 //controller
 
-function SaveGoals(){
-    let list = document.getElementById('list');
-
-    list.innerHTML = '';
-    if(!list) return;
-    
-    list.innerHTML = '';
-
-    let goalList = model.viewState.profileView.personalGoal.goalList;
-
-    for (let i = 0; i < goalList.length; i++) {
-        let checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = `goal-${i}`;
-
-        let label = document.createElement('label');
-        label.htmlFor = checkbox.id;
-        label.textContent = goalList[i];
-
-        list.appendChild(checkbox);
-        list.appendChild(label);
-        list.appendChild(document.createElement('br'));
-    }
-}
-
-
-function addCaffeine(amount){
-    const progress = model.viewState.profileView.progress;
-    progress.todaysCaffeine += amount;
-    progress.totalCaffeine += amount;
-
-    document.getElementById("showTodayCaffeine").innerText = progress.todaysCaffeine +  "mg";
-    document.getElementById("ShowTotalCaffeine").innerText = progress.totalCaffeine + " mg";
-
-}
-
-
-function ToogleLog(){
-
-    
-}
-
-
-
-
-function peptalkButton() {
-    let randombutton = model.data.pepTalks[Math.floor(Math.random() * model.data.pepTalks.length)];
-    document.getElementById("peptalktext").innerHTML = randombutton; //kan hente den via model kanskje senere?
-}
 
 
 
 
 
 
-function Spenndende(){
+
+/*function Spenndende(){
     if(bakgrunn === false){
     document.body.style.backgroundColor = 'green';
     document.body.style.color = 'red';
@@ -161,7 +143,7 @@ function Spenndende(){
 
         bakgrunn = false;
     }
-}
+}*/
 
 
 profileView();

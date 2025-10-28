@@ -214,3 +214,8 @@ hr {
     top: 12%;
     right: 40%;
 }
+
+.weekdays{
+    display: flex;
+    flex-direction: row;
+}
