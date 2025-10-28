@@ -32,17 +32,17 @@ function logView () {
   const drinkInfo = document.getElementById('drinkInformation');
 
   // display drinks as a list
-  model.data.drinkList.forEach(drink => {
-    const li = document.createElement('li');
-    li.textContent = drink.name;
-    li.classList.add('drink-list-item');
+    model.data.drinkList.forEach(drink => {
+      const li = document.createElement('li');
+      li.textContent = drink.name;
+      li.classList.add('drink-list-item');
 
-    li.dataset.name = drink.name;
-    li.dataset.size = drink.size;
-    li.dataset.caffein = drink.caffein;
+      li.dataset.name = drink.name;
+      li.dataset.size = drink.size;
+      li.dataset.caffein = drink.caffein;
 
-    drinkList.appendChild(li);
-  });
+      drinkList.appendChild(li);
+    });
 
   // event listener to show chosen drink
   drinkList.addEventListener('click', event => {
@@ -64,32 +64,54 @@ function logView () {
   drinkList.addEventListener('click', event => {
     if (event.target.tagName === 'BUTTON') {
       drinkInfo.innerHTML = /*html*/ `
-          <div class="custom-drink-container">
+          <div class="custom-drink-container" id="inputDrinkContainer">
             <label for="drinkType">Drink: </label>
-            <input type="text" class="drink-input" id="drinkType" name="drinkType" placeholder="Drink Type" onkeyup="drinkTypeInput(this)"><br>
+            <input type="text" class="drink-input" data-field="name" placeholder="Drink Type"><br>
             <label for="size">Size: </label>
-            <input type="text" class="drink-input" id="size" placeholder="Add Size" onkeyup="sizeInput(this)"><br>
+            <input type="text" class="drink-input" data-field="size" placeholder="Add Size"><br>
             <label for="drinkType">Caffeine: </label>
-            <input type="text" class="drink-input" id="caffeine" placeholder="Add Caffeine" onkeyup="caffeineInput(this)">
+            <input type="text" class="drink-input" data-field="caffeine" placeholder="Add Caffeine">
           </div>
           <br>
-          <button onclick="addCustomDrink()">Add Drink</button>
+          <button id="customDrinkBtn">Add Drink</button>
       `;
 
+      // saves user input from custom drink
+      const inputDrinkContainer = document.getElementById('inputDrinkContainer');
+      const customDrinkArray = model.viewState.logView.customDrink;
+
+      inputDrinkContainer.addEventListener("input", event => {
+        const field = event.target.dataset.field;
+        customDrinkArray[field] = event.target.value;
+      });
+
+      // add a custom drink
+      const customDrinkBtn = document.getElementById('customDrinkBtn');
+
+      customDrinkBtn.addEventListener('click', event => {
+        model.data.drinkList.push(customDrinkArray);
+        if (event.target.tagName === 'BUTTON') {
+          const { name, size, caffeine } = customDrinkArray;
+          drinkInfo.innerHTML =
+            `<p class="drink-title">${name}</p>
+             <p class="drink-info">Size: ${size}</p>
+             <p class="drink-info">Caffein: ${caffeine}</p>`;
+        }
+      });
+
     }
+
   });
+
 }
+
 
 function logDrink () {
   // function to save log somewhere in the model
 }
 
 
-function addCustomDrink() {
-  // add a custom drink
-  const drinkList = document.getElementById('drinkList');
 
-}
 
 // saving user input from both Journal and Reflections
 function journalInput(journalInput){
@@ -97,25 +119,10 @@ function journalInput(journalInput){
   console.log(journalValue);
 }
 
-function drinkTypeInput(drinkInput){
-  let drinkValue = drinkInput.value;
-  console.log(drinkValue);
-}
-function sizeInput(sizeInput){
-  let sizeValue = sizeInput.value;
-  console.log(sizeValue);
-}
-
 function reflectionInput(reflectionInput){
   let reflectionValue = reflectionInput.value;
   console.log(reflectionValue);
 }
-
-function caffeineInput(caffeineInput){
-  let caffeineValue = caffeineInput.value;
-  console.log(caffeineValue);
-}
-
 
 function backToProfile() {
   profileView();

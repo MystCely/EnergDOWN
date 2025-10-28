@@ -15,7 +15,7 @@ const model = {
 
       logView: {
             title: "Log",
-            customDrink: "",
+            customDrink: [],
             journal: [],
             reflections: [],
             timeAsleep: {
@@ -37,10 +37,11 @@ const model = {
             },
 
             personalGoal: { // do we need this ?
-                goalList: [],
+                goalList: [""],
                 daily: [""],
                 weekly: [""],
                 monthly: [""],
+                archivedGoals: [""],
             },
         },
 
