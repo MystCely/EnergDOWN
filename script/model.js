@@ -46,7 +46,7 @@ const model = {
                 archivedGoals: [""],
             },
 
-            weeklog: {
+            weekLog: {
                 monday: 0,
                 tuesday: 0,
                 wednesday: 0,
