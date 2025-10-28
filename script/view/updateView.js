@@ -3,24 +3,24 @@ const appDiv = document.getElementById("app");
 function updateView() {
     const currentPage = model.app.currentPage;
 
-    if (currentPage === 'welcomePage') {
+    if (currentPage === 'welcomeView') {
       welcomeView();
     }
 
-    if (currentPage === 'homepage'){
-        // homePage;
+    if (currentPage === 'homeView'){
+        // homeView;
     }
 
-    else if (currentPage === 'logInPage') {
+    else if (currentPage === 'logInView') {
         loginView();
     }
 
-    else if (currentPage === 'signUpPage'){
+    else if (currentPage === 'signUpView'){
         signupView();
     }
 
-    else if (currentPage === 'profilePage'){
-       profilePageViewUpdate();
+    else if (currentPage === 'profileView'){
+       profileView();
     }
 
     else if (currentPage === 'logView') {

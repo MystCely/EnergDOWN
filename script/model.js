@@ -1,9 +1,9 @@
 const model = {
     app: {
-        currentPage: "welcomePage",
+        currentPage: "welcomeView",
     },
     viewState: {
-        homePage: {
+      homeView: {
             post: "",
             profilePic: "",
             likeCount: 0,
@@ -13,7 +13,7 @@ const model = {
             search: "",
         },
 
-        logPage: {
+      logView: {
             title: "Log",
             customDrink: "",
             journal: [],
@@ -25,7 +25,7 @@ const model = {
             },
         },
 
-        profilePage: {
+      profileView: {
             barChart: {
                 quantity: 0,
                 days: 0,
@@ -44,7 +44,7 @@ const model = {
             },
         },
 
-        signUpPage: {
+      signUpView: {
             firstName: "",
             lastName: "",
             username: "",
@@ -54,7 +54,7 @@ const model = {
             confirmPassword: "",
         },
 
-        logInPage: {
+      logInView: {
             username: "",
             password: "",
         },

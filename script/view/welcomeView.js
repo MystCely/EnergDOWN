@@ -10,7 +10,7 @@ function welcomeView() {
         </h2>
     </div>
 
-    <button onclick="changePage('logInPage')">Log In</button>
-    <button onclick="changePage('signUpPage')">Sign Up</button>
+    <button onclick="changePage('logInView')">Log In</button>
+    <button onclick="changePage('signUpView')">Sign Up</button>
     `
 }

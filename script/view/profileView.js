@@ -17,7 +17,7 @@ let logOpen = false
 
 //view
 
-function profilePageViewUpdate() {
+function profileView() {
    appDiv.innerHTML = /*HTML*/ `
    <h1 class="log-btn-container">@${model.data.users[0].username}</h1>
    <label><h1 id="OpenLogCloseLog" onclick="changePage('logView')" class="LogButton";>+</h1></label>
@@ -74,7 +74,7 @@ AddToListButton.addEventListener('click', () => {
     let GoalText = input.value.trim();
     if(GoalText === '') return;
 
-    model.viewState.profilePage.personalGoal.goalList.push(GoalText)
+    model.viewState.profileView.personalGoal.goalList.push(GoalText)
 
     input.value = '';
     input.focus()
@@ -101,7 +101,7 @@ function SaveGoals(){
     
     list.innerHTML = '';
 
-    let goalList = model.viewState.profilePage.personalGoal.goalList;
+    let goalList = model.viewState.profileView.personalGoal.goalList;
 
     for (let i = 0; i < goalList.length; i++) {
         let checkbox = document.createElement('input');
@@ -120,7 +120,7 @@ function SaveGoals(){
 
 
 function addCaffeine(amount){
-    const progress = model.viewState.profilePage.progress;
+    const progress = model.viewState.profileView.progress;
     progress.todaysCaffeine += amount;
     progress.totalCaffeine += amount;
 
@@ -141,7 +141,7 @@ function ToogleLog(){
 function peptalkButton() {
     let randombutton = model.data.pepTalks[Math.floor(Math.random() * model.data.pepTalks.length)];
     document.getElementById("peptalktext").innerHTML = randombutton; //kan hente den via model kanskje senere?
-};
+}
 
 
 
@@ -164,4 +164,4 @@ function Spenndende(){
 }
 
 
-profilePageViewUpdate()
+profileView();

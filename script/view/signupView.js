@@ -2,7 +2,7 @@
 
 function signupView() {
     appDiv.innerHTML = /*HTML*/`
-    <button onclick="changePage('profilePage')">profile</button>
+    <button onclick="changePage('profileView')">profile</button>
     
     <section>
     <h1>

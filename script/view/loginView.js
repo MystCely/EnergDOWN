@@ -2,7 +2,7 @@
 // loginView() //Denne skal bort (TEST)
 function loginView() {
     appDiv.innerHTML = /*HTML*/`
-    <button onclick="changePage('profilePage')">Profile</button>
+    <button onclick="changePage('profileView')">Profile</button>
     
     <section>
         <h1>
@@ -22,16 +22,16 @@ function loginView() {
 }
 
 function saveUserName(value) {
-    model.viewState.logInPage.username = value
+    model.viewState.logInView.username = value
 }
 
 function savePassword(value) {
-    model.viewState.logInPage.password = value
+    model.viewState.logInView.password = value
 }
 
 function logInButton() {
-    let username = model.viewState.logInPage.username
-    let password = model.viewState.logInPage.password
+    let username = model.viewState.logInView.username
+    let password = model.viewState.logInView.password
     let correctinfo = false
     for(let i=0; i<model.data.users.length; i++) {
         if(username === model.data.users[i].username ||
@@ -41,8 +41,8 @@ function logInButton() {
             }
     }
     if(correctinfo) {
-        //Sendte til riktig side, (homepage,ProfilePafe)
-        changePage('profilePage')
+        //Sendte til riktig side, (homeView, profileView)
+        changePage('profileView')
         emptyLogInValue()
     }
     else if(!correctinfo) {
@@ -54,6 +54,6 @@ function logInButton() {
     }
 }
 function emptyLogInValue() {
-    model.viewState.logInPage.username = "";
-    model.viewState.logInPage.password = "";
+    model.viewState.logInView.username = "";
+    model.viewState.logInView.password = "";
 }
