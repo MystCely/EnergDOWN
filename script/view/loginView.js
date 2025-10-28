@@ -2,20 +2,22 @@
 // loginView() //Denne skal bort (TEST)
 function loginView() {
     appDiv.innerHTML = /*HTML*/`
-    <button onclick="changePage('profileView')">Profile</button>
-    
-    <section>
-        <h1>
-        EnergDown
-        </h1>
-        <div>
-            <input type="text" placeholder="Username" onchange="saveUserName(this.value)">
-            <br>
-            <input type="password" placeholder="Password" onchange="savePassword(this.value)">
+    <section class="main-container center">
+        <div class="center flex-column">
+          <h1 class="logIn-header">
+          EnergDown
+          </h1>
+          <div>
+              <input type="text" placeholder="Username" onchange="saveUserName(this.value)">
+              <br>
+              <input type="password" placeholder="Password" onchange="savePassword(this.value)">
+          </div>
+          <div class="center">
+            <button onclick="logInButton()">Log in</button>
+            <button onclick="changePage('profileView')">Profile</button>
+          </div>
         </div>
-        <button onclick="logInButton()">
-        Log in
-        </button>
+        
     </section>
     
     `;

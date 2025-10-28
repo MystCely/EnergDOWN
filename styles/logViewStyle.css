@@ -1,18 +1,3 @@
-body {
-    font-family: Inter, sans-serif;
-    margin: 0;
-}
-
-hr {
-    width: 100%;
-}
-
-.main-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
 .header-container {
     position: relative;
     display: flex;
@@ -175,43 +160,3 @@ hr {
     background-color: #444444;
     color: #FFFFFF;
 }
-
-
-.LogButton{
-    position: fixed;
-    top: 2%;
-    right: 20%;
-    width: 30px;
-    cursor: pointer;
-}
-
-.peptalkButtonAndText{
-    position: fixed;
-    top: 19%;
-    right: 25%;
-    height: 40px;
-}
-
-.profilePictureJustForShow{
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    top: 3%;
-    right: 16%;
-    border: solid 1px black;
-    border-radius: 50%;
-}
-
-.personalGoals{
-    position: fixed;
-    top: 17%;
-    right: 25%;
-    z-index: -1;
-}
-
-.peptalkTextPos{
-    position: fixed;
-    top: 12%;
-    right: 40%;
-}
-

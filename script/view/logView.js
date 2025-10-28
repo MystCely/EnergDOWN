@@ -1,6 +1,6 @@
 function logView () {
   appDiv.innerHTML = /*html*/ `
-    <div class="main-container">
+    <div class="flex-column center">
         <div class="header-container">
           <img src="../../img/back-btn.png" alt="back button" class="back-btn" onclick="backToProfile()">
           <img src="../../img/reset-btn.png" alt="reset button" class="reset-btn" onclick="resetLog()">

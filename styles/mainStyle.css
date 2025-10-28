@@ -1,0 +1,49 @@
+body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+}
+
+/* used in logView */
+hr {
+    width: 100%;
+}
+
+/* center elements */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* show elements vertically */
+.flex-column {
+    flex-direction: column;
+}
+
+.main-container {
+    height: 80vh;
+}
+
+/* default button design */
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+/* default header design */
+h1 {
+    font-size: 4em;
+}
+h2 {
+    font-size: 3em;
+    margin-top: 0;
+}
+
+
