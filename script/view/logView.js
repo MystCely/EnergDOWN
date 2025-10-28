@@ -61,15 +61,19 @@ function logView () {
   addButton.id = "customDrink";
   drinkList.appendChild(addButton);
 
+  // show form to add custom drink
   drinkList.addEventListener('click', event => {
     if (event.target.tagName === 'BUTTON') {
       drinkInfo.innerHTML = /*html*/ `
           <div class="custom-drink-container" id="inputDrinkContainer">
             <label for="drinkType">Drink: </label>
+            <br>
             <input type="text" class="drink-input" data-field="name" placeholder="Drink Type"><br>
             <label for="size">Size: </label>
+            <br>
             <input type="text" class="drink-input" data-field="size" placeholder="Add Size"><br>
             <label for="drinkType">Caffeine: </label>
+            <br>
             <input type="text" class="drink-input" data-field="caffeine" placeholder="Add Caffeine">
           </div>
           <br>
@@ -85,7 +89,7 @@ function logView () {
         customDrinkArray[field] = event.target.value;
       });
 
-      // add a custom drink
+      // show and save custom drink
       const customDrinkBtn = document.getElementById('customDrinkBtn');
 
       customDrinkBtn.addEventListener('click', event => {
@@ -94,8 +98,8 @@ function logView () {
           const { name, size, caffeine } = customDrinkArray;
           drinkInfo.innerHTML =
             `<p class="drink-title">${name}</p>
-             <p class="drink-info">Size: ${size}</p>
-             <p class="drink-info">Caffein: ${caffeine}</p>`;
+             <p class="drink-info">Size: ${size}ml</p>
+             <p class="drink-info">Caffein: ${caffeine}mg</p>`;
         }
       });
 

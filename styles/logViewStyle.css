@@ -35,6 +35,7 @@
     justify-content: center;
     align-items: center;
     width: 1000px;
+    height: 600px;
 }
 
 .drink-list-item {
@@ -65,10 +66,14 @@
     cursor: pointer;
 }
 
-.custom-drink-container {
-    display: flex;
-    flex-direction: column;
+#customDrinkBtn {
+    margin: 10px 0;
 }
+
+/*.custom-drink-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
 
 .drink-input {
     width: 100px;

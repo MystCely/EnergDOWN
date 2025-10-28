@@ -8,11 +8,11 @@ function loginView() {
           EnergDown
           </h1>
           <div>
-              <input type="text" placeholder="Username" onchange="saveUserName(this.value)">
+              <input class="input-field" type="text" placeholder="Username" onchange="saveUserName(this.value)">
               <br>
-              <input type="password" placeholder="Password" onchange="savePassword(this.value)">
+              <input class="input-field" type="password" placeholder="Password" onchange="savePassword(this.value)">
           </div>
-          <div class="center">
+          <div class="btn-container center">
             <button onclick="logInButton()">Log in</button>
             <button onclick="changePage('profileView')">Profile</button>
           </div>

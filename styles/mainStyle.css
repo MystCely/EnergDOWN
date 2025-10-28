@@ -37,6 +37,10 @@ button:hover {
     background-color: lightgray;
 }
 
+.btn-container {
+    margin: 10px;
+}
+
 /* default header design */
 h1 {
     font-size: 4em;
@@ -44,6 +48,13 @@ h1 {
 h2 {
     font-size: 3em;
     margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* default input field design*/
+.input-field {
+    padding: 8px;
+    margin: 5px;
 }
 
 
