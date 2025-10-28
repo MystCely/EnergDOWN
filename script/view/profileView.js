@@ -64,30 +64,7 @@ function profileView() {
    <br>
    <br>
 
-   <h1>Progress</h1>
-   <div><dl>1000 mg</dl>
-   <br>
-   <br>
-   <dl>500 mg</dl>
-   <br>
-   <br>
-   <dl>250 mg</dl>
-   <br>
-   <dl>100 mg</dl>
-   <br>
-   <dl>0 mg</dl>
-   </div>
-
-   <div class="weekdays">
-   <p>Mon</p>
-   <p>tue</p>
-   <p>wed</p>
-   <p>thurs</p>
-   <p>fri</p>
-   <p>sat</p>
-   <p>sun</p>
-   </div>
-
+   
    
    
    `;
@@ -122,6 +99,30 @@ SaveGoals()
 }
 
 //controller
+
+/*<h1>Progress</h1>
+   <div><dl>1000 mg</dl>
+   <br>
+   <br>
+   <dl>500 mg</dl>
+   <br>
+   <br>
+   <dl>250 mg</dl>
+   <br>
+   <dl>100 mg</dl>
+   <br>
+   <dl>0 mg</dl>
+   </div>
+
+   <div class="weekdays">
+   <p>Mon</p>
+   <p>tue</p>
+   <p>wed</p>
+   <p>thurs</p>
+   <p>fri</p>
+   <p>sat</p>
+   <p>sun</p>
+   </div>*/
 
 
 

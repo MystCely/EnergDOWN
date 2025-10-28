@@ -36,6 +36,16 @@ const model = {
                 totalCaffeine: 0,
             },
 
+            
+
+            personalGoal: { // do we need this ?
+                goalList: [],
+                daily: [""],
+                weekly: [""],
+                monthly: [""],
+                archivedGoals: [""],
+            },
+
             weeklog: {
                 monday: 0,
                 tuesday: 0,
@@ -45,14 +55,6 @@ const model = {
                 saturday: 0,
                 sunday: 0
 
-            },
-
-            personalGoal: { // do we need this ?
-                goalList: [""],
-                daily: [""],
-                weekly: [""],
-                monthly: [""],
-                archivedGoals: [""],
             },
         },
 
