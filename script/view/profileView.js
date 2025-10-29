@@ -80,8 +80,8 @@ function profileView() {
             top: 50%;
             left: 20%;
             align-items: flex-end;
-             height: 200px;
-            gap: 5px;
+            height: 200px;;
+            gap: 25px;
             margin-top: 30px;">
     </div>
 
