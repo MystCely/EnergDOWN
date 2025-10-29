@@ -19,6 +19,12 @@ function logView () {
               <h3 class="reflections-header">Reflections</h3>
               <textarea id="reflections" cols="30" rows="5" placeholder="How are you feeling?" onkeyup="reflectionInput(this)"></textarea>
             </div>
+            <div>
+              <h3>Time Asleep</h3>
+              <input type="date">
+              <input type="text" placeholder="Add hours">
+              <input type="text" placeholder="Add minutes">
+            </div>
         </div>
       </div>
     </div>
@@ -39,7 +45,7 @@ function logView () {
 
       li.dataset.name = drink.name;
       li.dataset.size = drink.size;
-      li.dataset.caffein = drink.caffein;
+      li.dataset.caffeine = drink.caffeine;
 
       drinkList.appendChild(li);
     });
@@ -47,11 +53,11 @@ function logView () {
   // event listener to show chosen drink
   drinkList.addEventListener('click', event => {
     if (event.target.tagName === 'LI') {
-      const { name, size, caffein } = event.target.dataset;
+      const { name, size, caffeine } = event.target.dataset;
       drinkInfo.innerHTML =
         `<p class="drink-title">${name}</p>
          <p class="drink-info">Size: ${size}</p>
-         <p class="drink-info">Caffein: ${caffein}</p>`;
+         <p class="drink-info">Caffeine: ${caffeine}</p>`;
     }
   });
 
@@ -76,8 +82,8 @@ function logView () {
             <br>
             <input type="text" class="drink-input" data-field="caffeine" placeholder="Add Caffeine">
           </div>
-          <br>
-          <button id="customDrinkBtn">Add Drink</button>
+          <button id="saveDrinkBtn">Save</button>
+          <hr>
       `;
 
       // saves user input from custom drink
@@ -90,16 +96,20 @@ function logView () {
       });
 
       // show and save custom drink
-      const customDrinkBtn = document.getElementById('customDrinkBtn');
+      const saveDrinkBtn = document.getElementById('saveDrinkBtn');
+      saveDrinkBtn.addEventListener('click', event => {
+        if (!customDrinkArray.name || !customDrinkArray.size || !customDrinkArray.caffeine) {
+          alert("Please fill in all the drink information.");
+          return;
+        }
 
-      customDrinkBtn.addEventListener('click', event => {
         model.data.drinkList.push(customDrinkArray);
         if (event.target.tagName === 'BUTTON') {
           const { name, size, caffeine } = customDrinkArray;
           drinkInfo.innerHTML =
             `<p class="drink-title">${name}</p>
              <p class="drink-info">Size: ${size}ml</p>
-             <p class="drink-info">Caffein: ${caffeine}mg</p>`;
+             <p class="drink-info">Caffeine: ${caffeine}mg</p>`;
         }
       });
 
@@ -111,10 +121,8 @@ function logView () {
 
 
 function logDrink () {
-  // function to save log somewhere in the model
+  // function to save log somewhere in the mode
 }
-
-
 
 
 // saving user input from both Journal and Reflections
