@@ -77,13 +77,13 @@ const model = {
 
     data: {
         drinkList: [
-            {name: "Normal cup of coffee", size: "240ml", caffein: "95mg"},
-            {name: "Normal cup of tea", size: "180ml", caffein: "40mg"},
-            {name: "Starbucks Cappuccino", size: "220ml", caffein: "90mg"},
-            {name: "Espresso Shot", size: "30ml", caffein: "63mg"},
-            {name: "Standard Redbull", size: "250ml", caffein: "80mg"},
-            {name: "Monster", size: "500ml", caffein: "160mg"},
-            {name: "Monster Ultra", size: "500ml", caffein: "150mg"},
+            {name: "Normal cup of coffee", size: "240ml", caffeine: "95mg"},
+            {name: "Normal cup of tea", size: "180ml", caffeine: "40mg"},
+            {name: "Starbucks Cappuccino", size: "220ml", caffeine: "90mg"},
+            {name: "Espresso Shot", size: "30ml", caffeine: "63mg"},
+            {name: "Standard Redbull", size: "250ml", caffeine: "80mg"},
+            {name: "Monster", size: "500ml", caffeine: "160mg"},
+            {name: "Monster Ultra", size: "500ml", caffeine: "150mg"},
         ],
 
         pepTalks: [

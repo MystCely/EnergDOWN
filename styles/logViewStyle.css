@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     width: 1000px;
-    height: 600px;
+    height: 550px;
 }
 
 .drink-list-item {
@@ -56,14 +56,15 @@
     list-style-type: none;
     text-align: center;
     margin: 10px;
-    padding: 10px;
+    width: 120px;
     background-color: #9D9D9D;
     color: #FFFFFF;
-
-    width: 150px;
-    height: 80px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+#customDrink:hover {
+    background-color: #444444;
 }
 
 #customDrinkBtn {
@@ -77,6 +78,7 @@
 
 .drink-input {
     width: 100px;
+    padding: 3px;
 }
 
 .drink-list-item:hover {
@@ -128,7 +130,6 @@
     padding-bottom: 5px;
     font-size: 40px;
     font-weight: 550;
-
 }
 
 .drink-info {
@@ -147,7 +148,7 @@
 }
 
 .log-btn-container {
-    margin-top: 40px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
