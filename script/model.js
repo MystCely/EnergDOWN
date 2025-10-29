@@ -1,6 +1,6 @@
 const model = {
     app: {
-        currentPage: "welcomeView",
+        currentPage: "logView",
     },
     viewState: {
       homeView: {
@@ -83,6 +83,7 @@ const model = {
         ],
 
         sleepList: [],
+        logList: [],
 
         pepTalks: [
             "I believe in you.",

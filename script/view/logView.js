@@ -11,27 +11,26 @@ function logView () {
         <ul id="drinkList"></ul>
         <div class="log-container">
             <div id="drinkInformation">
-                <p class="choose-drink">Choose a drink</p>
             </div>
             <div class="journal-container">
               <h3 class="journal-header">Journal</h3>
-              <textarea id="journal" cols="30" rows="5" placeholder="How was your day?" onkeyup="journalInput(this)"></textarea>
+              <textarea id="journal" cols="30" rows="5" placeholder="How was your day?" data-field="journal"></textarea>
               <h3 class="reflections-header">Reflections</h3>
-              <textarea id="reflections" cols="30" rows="5" placeholder="How are you feeling?" onkeyup="reflectionInput(this)"></textarea>
-            </div>
-            <div>
-              <h3>Time Asleep</h3>
-              <input type="date">
-              <input type="text" placeholder="Add hours">
-              <input type="text" placeholder="Add minutes">
+              <textarea id="reflections" cols="30" rows="5" placeholder="How are you feeling?" data-field="reflection"></textarea>
+                <h3>Time Asleep</h3>
+                <input class="input-field" type="text" placeholder="Add hours" data-field="hours">
+                <br>
+                <input class="input-field" type="text" placeholder="Add minutes" data-field="minute">
+                <br>
+                <input type="date" data-field="date">
             </div>
         </div>
       </div>
     </div>
-    
     <div class="log-btn-container">
-      <button id="saveLogBtn" onclick="logDrink()">Add</button>
+      <button id="saveLogBtn" onclick="saveLog()">Add</button>
     </div>
+    
     `;
 
   const drinkList = document.getElementById('drinkList');
@@ -71,18 +70,17 @@ function logView () {
   drinkList.addEventListener('click', event => {
     if (event.target.tagName === 'BUTTON') {
       drinkInfo.innerHTML = /*html*/ `
-          <div class="custom-drink-container" id="inputDrinkContainer">
-            <label for="drinkType">Drink: </label>
-            <br>
-            <input type="text" class="drink-input" data-field="name" placeholder="Drink Type"><br>
-            <label for="size">Size: </label>
-            <br>
-            <input type="text" class="drink-input" data-field="size" placeholder="Add Size"><br>
-            <label for="drinkType">Caffeine: </label>
-            <br>
+          <div id="inputDrinkContainer">
+            <label class="label-drink" for="drinkType">Drink: </label>
+            <input type="text" class="drink-input" data-field="name" placeholder="Drink Type">
+            <label class="label-drink" for="size">Size: </label>
+            <input type="text" class="drink-input" data-field="size" placeholder="Add Size">
+            <label class="label-drink" for="drinkType">Caffeine: </label>
             <input type="text" class="drink-input" data-field="caffeine" placeholder="Add Caffeine">
           </div>
-          <button id="saveDrinkBtn">Save</button>
+          <div class="center">
+            <button id="saveDrinkBtn">Save</button>
+          </div>
           <hr>
       `;
 
@@ -120,8 +118,19 @@ function logView () {
 }
 
 
-function logDrink () {
-  // function to save log somewhere in the mode
+function saveLog() {
+  // find all elements with data-field
+  const fields = document.querySelectorAll("[data-field]");
+  const logData = {};
+
+  fields.forEach(field => {
+    const fieldName = field.dataset.field;
+    logData[fieldName] = field.value;
+  })
+
+  model.data.logList.push(logData);
+  profileView();
+  console.log(model.data.logList);
 }
 
 

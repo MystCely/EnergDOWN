@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     width: 1000px;
-    height: 550px;
+    height: 650px;
 }
 
 .drink-list-item {
@@ -71,10 +71,9 @@
     margin: 10px 0;
 }
 
-/*.custom-drink-container {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
+#inputDrinkContainer {
+    display: flex;
+}
 
 .drink-input {
     width: 100px;
@@ -165,4 +164,13 @@
 #saveLogBtn:hover {
     background-color: #444444;
     color: #FFFFFF;
+}
+
+.drink-input {
+    margin-right: 10px;
+}
+
+.label-drink {
+    margin-right: 8px;
+
 }
