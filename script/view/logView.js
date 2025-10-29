@@ -19,6 +19,12 @@ function logView () {
               <h3 class="reflections-header">Reflections</h3>
               <textarea id="reflections" cols="30" rows="5" placeholder="How are you feeling?" onkeyup="reflectionInput(this)"></textarea>
             </div>
+            <div>
+              <h3>Time Asleep</h3>
+              <input type="date">
+              <input type="text" placeholder="Add hours">
+              <input type="text" placeholder="Add minutes">
+            </div>
         </div>
       </div>
     </div>
