@@ -15,14 +15,10 @@ const model = {
 
       logView: {
             title: "Log",
-            customDrink: [],
+            customDrink: {},
+            customSleep: {},
             journal: [],
             reflections: [],
-            timeAsleep: {
-                currentDay: "",
-                totalHours: "",
-                totalMinutes: "",
-            },
         },
 
       profileView: {
@@ -85,6 +81,8 @@ const model = {
             {name: "Monster", size: "500ml", caffeine: "160mg"},
             {name: "Monster Ultra", size: "500ml", caffeine: "150mg"},
         ],
+
+        sleepList: [],
 
         pepTalks: [
             "I believe in you.",

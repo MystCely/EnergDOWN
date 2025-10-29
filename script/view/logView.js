@@ -76,7 +76,7 @@ function logView () {
             <br>
             <input type="text" class="drink-input" data-field="caffeine" placeholder="Add Caffeine">
           </div>
-          <button id="customDrinkBtn">Save</button>
+          <button id="saveDrinkBtn">Save</button>
           <hr>
       `;
 
@@ -90,9 +90,13 @@ function logView () {
       });
 
       // show and save custom drink
-      const customDrinkBtn = document.getElementById('customDrinkBtn');
+      const saveDrinkBtn = document.getElementById('saveDrinkBtn');
+      saveDrinkBtn.addEventListener('click', event => {
+        if (!customDrinkArray.name || !customDrinkArray.size || !customDrinkArray.caffeine) {
+          alert("Please fill in all the drink information.");
+          return;
+        }
 
-      customDrinkBtn.addEventListener('click', event => {
         model.data.drinkList.push(customDrinkArray);
         if (event.target.tagName === 'BUTTON') {
           const { name, size, caffeine } = customDrinkArray;
