@@ -25,55 +25,65 @@ function profileView() {
     model.viewState.profileView.weekLog = model.viewState.profileView.weekLog
 
    appDiv.innerHTML = /*HTML*/ `
-   <h1 class="log-btn-container">@${model.data.users[0].username}</h1>
-   <label><h1 id="OpenLogCloseLog" onclick="changePage('logView')" class="LogButton";>+</h1></label>
+   <div><h1 class="center">@${model.data.users[0].username}</h1></div>
+   <hr>
+   <label><h1 onclick="changePage('logView')" class="logpageButton";>+</h1></label>
    <div class="profilePictureJustForShow"></div>
 
-   <button class="peptalkButtonAndText" onclick="peptalkButton()">PepTalks</button>
-   <div class="peptalkTextPos" id="peptalktext"></div>
+   <button class="Peptalks" onclick="peptalkButton()">PepTalks</button>
+   <div class="peptalkPops" id="peptalktext"></div>
 
 
-   <div class="personalGoals"><span><h1>Personal goals</h1></span>
-   <br>
-   <div id="list"></div>
-   <br>
-   <br>
+   <div class="personalGoals"><span><h2>Personal goals</h2></span>
+   </div>
+   
+   <div class="daylieGoals">
+   <h3 >Daylie goals</h3>
+   <div class=""id="list"></div>
+   </div>
+   
+   <div class="goalsInput">
    <input id="GoalText" type="text" placeholder="Create new goal">
-   <button id="AddToListButton">add</button>
-   <br>
+   </div>
+   
+   <div class="addButtonPos"><button id="AddToListButton">add</button></div>
+
+   <div class="daylieWeekMonth">
    <form><label for="choose"></label></form>
             <select id="choose" name="choices">
             <option value="daylie">daily</option>
             <option value="weekly">weekly</option>
             <option value="monthly">monthly</option>
             </select>
+    </div>
+
+    <div class="caffianAmount">
+    <h3>Todays caffain:</h3>
+    <h3 id="showTodayCaffeine"></h3>
+    <h3>Total caffain:</h3>
+    <h3 id="ShowTotalCaffeine"></h3>
+    </div>
 
     
-    <h2>Todays caffain:</h2>
-    <h2 id="showTodayCaffeine"></h2>
-    <br>
-    <h2>Total caffain:</h2>
-    <h2 id="ShowTotalCaffeine"></h2>
-    <br>
-    <br>
-    <br>
-    <br>
+    
+    <div class="testbuttons">
     <button onclick="addCaffeine(80)">kaffe (80mg)</button>
     <button onclick="addCaffeine(40)">te (40mg)</button>
     <button onclick="addCaffeine(120)">Energidrikk (120mg)</button>
-
-   </div>
-
-   <br>
-   <br>
-
-   <div id="chartContainer"
-     style="display: flex;
+    </div>
+    
+    <h2 class="ProgressHeader">Progress</h2>
+    <div class="" id="chartContainer"
+        style="
+            display: flex;
+            position: fixed;
+            top: 50%;
+            left: 20%;
             align-items: flex-end;
-            height: 200px;
+             height: 200px;
             gap: 5px;
             margin-top: 30px;">
-</div>
+    </div>
 
    
    
