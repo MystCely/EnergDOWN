@@ -1,6 +1,6 @@
 const model = {
     app: {
-        currentPage: "logView",
+        currentPage: "welcomeView",
     },
     viewState: {
       homeView: {
