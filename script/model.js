@@ -32,8 +32,6 @@ const model = {
                 totalCaffeine: 0,
             },
 
-            
-
             personalGoal: { // do we need this ?
                 goalList: [],
                 daily: {

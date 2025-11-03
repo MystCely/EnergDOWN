@@ -100,6 +100,10 @@ function logView () {
           alert("Please fill in all the drink information.");
           return;
         }
+        else if (!isNaN(customDrinkArray.name) || isNaN(customDrinkArray.size) || isNaN(customDrinkArray.caffeine)) {
+          alert("Please fill in the correct format.");
+          return;
+        }
 
         model.data.drinkList.push(customDrinkArray);
         if (event.target.tagName === 'BUTTON') {
@@ -117,32 +121,19 @@ function logView () {
 
 }
 
-
-function saveLog() {
+function saveLog () {
   // find all elements with data-field
-  const fields = document.querySelectorAll("[data-field]");
+  const fields = document.querySelectorAll('[data-field]');
   const logData = {};
 
   fields.forEach(field => {
     const fieldName = field.dataset.field;
     logData[fieldName] = field.value;
-  })
+  });
 
   model.data.logList.push(logData);
   profileView();
   console.log(model.data.logList);
-}
-
-
-// saving user input from both Journal and Reflections
-function journalInput(journalInput){
-  let journalValue = journalInput.value;
-  console.log(journalValue);
-}
-
-function reflectionInput(reflectionInput){
-  let reflectionValue = reflectionInput.value;
-  console.log(reflectionValue);
 }
 
 function backToProfile() {
