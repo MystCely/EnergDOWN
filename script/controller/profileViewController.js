@@ -1,21 +1,20 @@
-function SaveGoals(){
-    let list = document.getElementById('list');
-
-    list.innerHTML = '';
+function SaveGoals() {
+    const list = document.getElementById('list');
     if(!list) return;
-    
+
     list.innerHTML = '';
 
-    let goalList = model.viewState.profileView.personalGoal.goalList;
+    const day = model.viewState.profileView.selectedDay; 
+    const dailyGoals = model.viewState.profileView.personalGoal.daily[day]; 
 
-    for (let i = 0; i < goalList.length; i++) {
-        let checkbox = document.createElement('input');
+    for (let i = 0; i < dailyGoals.length; i++) {
+        const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = `goal-${i}`;
 
-        let label = document.createElement('label');
+        const label = document.createElement('label');
         label.htmlFor = checkbox.id;
-        label.textContent = goalList[i];
+        label.textContent = dailyGoals[i];
 
         list.appendChild(checkbox);
         list.appendChild(label);
@@ -24,20 +23,17 @@ function SaveGoals(){
 }
 
 
+
 function addCaffeine(amount){
     const progress = model.viewState.profileView.progress;
     const weekLog = model.viewState.profileView.weekLog;
-    
-    progress.todaysCaffeine += amount;
+    const day = model.viewState.profileView.selectedDay;
+
+    weekLog[day] += amount;
+
     progress.totalCaffeine += amount;
 
-    const today = "tuesday";
-    weekLog[today] += amount;
-
-    document.getElementById("showTodayCaffeine").innerText = progress.todaysCaffeine +  "mg";
-    document.getElementById("ShowTotalCaffeine").innerText = progress.totalCaffeine + " mg";
-
-    renderChart();
+    updateDayInputs();
 
 }
 
@@ -51,7 +47,9 @@ function updateCaffeineDisplay() {
 
 function peptalkButton() {
     let randombutton = model.data.pepTalks[Math.floor(Math.random() * model.data.pepTalks.length)];
-    document.getElementById("peptalktext").innerHTML = randombutton; //kan hente den via model kanskje senere?
+    document.getElementById("peptalktext").innerHTML = randombutton;
+    alert(randombutton)
+
 }
 
 function renderChart() {
@@ -72,4 +70,16 @@ function renderChart() {
         bar.textContent = values[i]; 
         container.appendChild(bar);
     }
+}
+
+function updateDayInputs() {
+    const day = model.viewState.profileView.selectedDay;
+    const weekLog = model.viewState.profileView.weekLog;
+    const progress = model.viewState.profileView.progress;
+
+    document.getElementById("showTodayCaffeine").innerText = weekLog[day] + " mg";
+
+    document.getElementById("ShowTotalCaffeine").innerText = progress.totalCaffeine + " mg"
+
+    renderChart()
 }

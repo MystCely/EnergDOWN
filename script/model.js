@@ -36,22 +36,33 @@ const model = {
 
             personalGoal: { // do we need this ?
                 goalList: [],
-                daily: [""],
+                daily: {
+                    Monday: [],
+                    Tuesday: [],
+                    Wednesday: [],
+                    Thursday: [],
+                    Friday: [],
+                    Saturday: [],
+                    Sunday: []
+                },
                 weekly: [""],
                 monthly: [""],
                 archivedGoals: [""],
+                
             },
 
             weekLog: {
-                monday: 0,
-                tuesday: 0,
-                wednesday: 0,
-                thursday: 0,
-                friday: 0,
-                saturday: 0,
-                sunday: 0
+                Monday: 0,
+                Tuesday: 0,
+                Wednesday: 0,
+                Thursday: 0,
+                Friday: 0,
+                Saturday: 0,
+                Sunday: 0
 
             },
+
+            selectedDay: "Monday",
         },
 
       signUpView: {

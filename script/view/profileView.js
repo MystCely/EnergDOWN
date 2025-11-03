@@ -1,24 +1,5 @@
 
-/* Min checklist:
-    Peptalk (x)
-    Add knapp (x)
-    Create new goal (x)
-    Peptalk når siden lastes førstegang (x)
-    total caffain () koble til Steph sine
-    coffain so far () koble til Steph sine
-    Graf()
 
-    */
-
-
-/*let bakgrunn =false;
-let logOpen = false 
-
-*/ // evt toogle knapp til logg + Steph's knapp
-
-
-
-//view
 
 function profileView() {
     
@@ -51,9 +32,13 @@ function profileView() {
    <div class="daylieWeekMonth">
    <form><label for="choose"></label></form>
             <select id="choose" name="choices">
-            <option value="daylie">daily</option>
-            <option value="weekly">weekly</option>
-            <option value="monthly">monthly</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
             </select>
     </div>
 
@@ -90,6 +75,16 @@ function profileView() {
    
    `;
 
+   const daySelect = document.getElementById("choose");
+   daySelect.value = model.viewState.profileView.selectedDay;
+
+   daySelect.addEventListener("change", () => {
+    model.viewState.profileView.selectedDay = daySelect.value;;
+    updateDayInputs();
+    SaveGoals();
+});
+
+
    peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
    updateCaffeineDisplay()
    renderChart()
@@ -105,66 +100,24 @@ AddToListButton.addEventListener('click', () => {
     let GoalText = input.value.trim();
     if(GoalText === '') return;
 
-    model.viewState.profileView.personalGoal.goalList.push(GoalText)
+    // Legg til i den globale listen
+    model.viewState.profileView.personalGoal.goalList.push(GoalText);
+
+    // Legg til i dagens mål
+    const day = model.viewState.profileView.selectedDay;
+    model.viewState.profileView.personalGoal.daily[day].push(GoalText);
 
     input.value = '';
-    input.focus()
+    input.focus();
 
-    SaveGoals()
-
-})
+    SaveGoals();
+});
 
 SaveGoals()
 
 }
 
-//controller
 
-
-
-
-
-
-
-/*function Spenndende(){
-    if(bakgrunn === false){
-    document.body.style.backgroundColor = 'green';
-    document.body.style.color = 'red';
-    
-    bakgrunn = true;
-}
-    else{
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-
-        bakgrunn = false;
-    }
-}*/
 
 
 profileView();
-
-
-
-
-
-/*const weekLog = model.viewState.profileView.weekLog;
-    const days = Object.keys(weekLog);
-    const values = Object.values(weekLog)
-
-    const container = document.getElementById("chartContainer");
-    container.innerHTML = "";
-
-    for(let i = 0; i < days.length; i++){
-        const bar = document.createElement("div");
-        bar.style.height = values[i] * 2 + "px"; // høyden representerer koffein
-        bar.style.width = "30px";
-        bar.style.backgroundColor = "orange";
-        bar.style.textAlign = "center";
-        bar.style.color = "black";
-        bar.style.display = "flex";
-        bar.style.justifyContent = "center";
-        bar.style.alignItems = "flex-end";
-        bar.textContent = values[i]; // vis tall på stolpen
-        container.appendChild(bar);
-}*/
