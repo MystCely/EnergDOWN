@@ -86,6 +86,7 @@ function profileView() {
 
 
    // peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
+   peptalkButton() 
    updateCaffeineDisplay()
    renderChart()
 
@@ -100,10 +101,10 @@ AddToListButton.addEventListener('click', () => {
     let GoalText = input.value.trim();
     if(GoalText === '') return;
 
-    // Legg til i den globale listen
+    
     model.viewState.profileView.personalGoal.goalList.push(GoalText);
 
-    // Legg til i dagens mål
+    
     const day = model.viewState.profileView.selectedDay;
     model.viewState.profileView.personalGoal.daily[day].push(GoalText);
 
