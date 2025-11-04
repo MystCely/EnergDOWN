@@ -1,6 +1,7 @@
 const model = {
     app: {
         currentPage: "welcomeView",
+        currentUserId: null,
     },
     viewState: {
       homeView: {
@@ -113,7 +114,12 @@ const model = {
         ],
 
         users: [
-            {admin: true, username: "Linn", password: "jegElskerFugler321"},
+            {
+                id: 1,
+                admin: true, 
+                username: "Linn", 
+                password: "jegElskerFugler321"
+            },
         ],
     },
 
