@@ -48,7 +48,6 @@ function updateCaffeineDisplay() {
 function peptalkButton() {
     let randombutton = model.data.pepTalks[Math.floor(Math.random() * model.data.pepTalks.length)];
     document.getElementById("peptalktext").innerHTML = randombutton;
-    alert(randombutton)
 
 }
 
