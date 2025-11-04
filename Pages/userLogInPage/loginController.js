@@ -1,6 +1,6 @@
 
 
-function getLoggedInUser4(){
+function getLoggedInUser(){
     const currentId = model.app.currentUserId;
-    return currentId == null ? {} : model.data.users.find(user => user.id === currentId);
+    return currentId == null ? "guest": model.data.users.find(user => user.id === currentId).username;
 }

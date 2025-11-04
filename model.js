@@ -118,7 +118,13 @@ const model = {
                 id: 1,
                 admin: true, 
                 username: "Linn", 
-                password: "jegElskerFugler321"
+                password: "jegElskerFugler321",
+            },
+            {
+                id: 2,
+                admin: false,
+                username: "hei",
+                password: "hade",
             },
         ],
     },

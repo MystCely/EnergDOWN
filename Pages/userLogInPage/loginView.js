@@ -34,14 +34,17 @@ function logInButton() {
     let username = model.viewState.logInView.username
     let password = model.viewState.logInView.password
     let correctinfo = false
+    let loggedInUserId = null
     for(let i=0; i<model.data.users.length; i++) {
         if(username === model.data.users[i].username &&
             password === model.data.users[i].password) {
                 //Må lagre info et sted, evt id??
                 correctinfo = true
+                loggedInUserId = model.data.users[i].id;
             }
     }
     if(correctinfo) {
+        model.app.currentUserId = loggedInUserId;
         //Sendte til riktig side, (homeView, profileView)
         changePage('profileView')
         emptyLogInValue()
@@ -53,7 +56,7 @@ function logInButton() {
     }else{
         console.log("ERROR")
     }
-    getLoggedInUser4()
+    
 }
 function emptyLogInValue() {
     model.viewState.logInView.username = "";
