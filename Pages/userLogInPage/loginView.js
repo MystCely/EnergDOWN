@@ -53,8 +53,10 @@ function logInButton() {
     }else{
         console.log("ERROR")
     }
+    getLoggedInUser4()
 }
 function emptyLogInValue() {
     model.viewState.logInView.username = "";
     model.viewState.logInView.password = "";
+    
 }
