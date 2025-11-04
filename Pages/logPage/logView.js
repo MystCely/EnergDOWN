@@ -12,7 +12,7 @@ function logView () {
         <div class="log-container">
             <div id="drinkInformation">
             </div>
-            <div class="journal-container">
+            <div class="journal-container" id="inputJournalContainer">
               <h3 class="journal-header">Journal</h3>
               <textarea id="journal" cols="30" rows="5" placeholder="How was your day?" data-field="journal"></textarea>
               <h3 class="reflections-header">Reflections</h3>
@@ -86,28 +86,32 @@ function logView () {
 
       // saves user input from custom drink
       const inputDrinkContainer = document.getElementById('inputDrinkContainer');
-      const customDrinkArray = model.viewState.logView.customDrink;
+      const customDrink = model.viewState.logView.customDrink;
 
       inputDrinkContainer.addEventListener("input", event => {
         const field = event.target.dataset.field;
-        customDrinkArray[field] = event.target.value;
+        customDrink[field] = event.target.value;
       });
 
       // show and save custom drink
       const saveDrinkBtn = document.getElementById('saveDrinkBtn');
       saveDrinkBtn.addEventListener('click', event => {
-        if (!customDrinkArray.name || !customDrinkArray.size || !customDrinkArray.caffeine) {
+        if (!customDrink.name || !customDrink.size || !customDrink.caffeine) {
           alert("Please fill in all the drink information.");
           return;
         }
-        else if (!isNaN(customDrinkArray.name) || isNaN(customDrinkArray.size) || isNaN(customDrinkArray.caffeine)) {
+        else if (!isNaN(customDrink.name) || isNaN(customDrink.size) || isNaN(customDrink.caffeine)) {
           alert("Please fill in the correct format.");
           return;
         }
+        else if (customDrink.size <= 0 || customDrink.caffeine <= 0) {
+          alert("Please add drink size and caffeine.");
+          return;
+        }
 
-        model.data.drinkList.push(customDrinkArray);
+        model.data.drinkList.push(customDrink);
         if (event.target.tagName === 'BUTTON') {
-          const { name, size, caffeine } = customDrinkArray;
+          const { name, size, caffeine } = customDrink;
           drinkInfo.innerHTML =
             `<p class="drink-title">${name}</p>
              <p class="drink-info">Size: ${size}ml</p>
@@ -115,6 +119,8 @@ function logView () {
         }
       });
 
+      // add later
+      // const inputJournalContainer = document.getElementById('inputJournalContainer');
     }
 
   });

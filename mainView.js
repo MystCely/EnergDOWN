@@ -1,6 +1,6 @@
 const appDiv = document.getElementById("app");
 
-function updateView() {
+function mainView() {
     const currentPage = model.app.currentPage;
 
     if (currentPage === 'welcomeView') {
@@ -29,4 +29,9 @@ function updateView() {
 
 }
 
-window.onload = () => updateView();
+window.onload = () => mainView();
+
+function changePage(newpage){
+  model.app.currentPage = newpage;
+  mainView();
+}
