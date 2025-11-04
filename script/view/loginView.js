@@ -14,7 +14,6 @@ function loginView() {
           </div>
           <div class="btn-container center">
             <button onclick="logInButton()">Log in</button>
-            <button onclick="changePage('profileView')">Profile</button>
           </div>
         </div>
         

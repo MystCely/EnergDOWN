@@ -10,24 +10,15 @@ function signupView() {
         </h1>
         
         <div>
-            <input class="input-field" onchange="" type="text" placeholder="First name">
-            <br>
-            <input class="input-field" onchange="" type="text" placeholder="Last name">
-            <br>
-            <input class="input-field" onchange="" type="text" placeholder="User name">
-            <br>
-            <input class="input-field" onchange="" type="email" placeholder="Email address">
+            <input class="input-field" onchange="" type="text" placeholder="Username">
             <br>
             <input class="input-field" onchange="" type="password" placeholder="Password">
             <br>
             <input class="input-field" onchange="" type="password" placeholder="Confirm password">
-            <br>
-            <input class="input-field" onchange="" type="date" placeholder="Birth date">
         </div>
         
         <div class="btn-container center">
             <button onclick=SignUpButton()>Sign up</button>
-            <button onclick="changePage('profileView')">profile</button>
         </div>
       </div>
       

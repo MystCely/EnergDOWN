@@ -132,8 +132,8 @@ function saveLog () {
   });
 
   model.data.logList.push(logData);
-  profileView();
   console.log(model.data.logList);
+  profileView();
 }
 
 function backToProfile() {
