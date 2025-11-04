@@ -85,7 +85,7 @@ function profileView() {
 });
 
 
-   peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
+   // peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
    updateCaffeineDisplay()
    renderChart()
 
