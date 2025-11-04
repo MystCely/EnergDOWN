@@ -33,7 +33,7 @@ function SignUpButton() {
     // const email = model.email;
     // const birthdate = model.birthday;
     const password = model.password;
-    const confpassword = model.confirmPassword;
+    const confpassword = model.confPassword;
 
     
     
