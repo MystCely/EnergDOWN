@@ -6,7 +6,7 @@ function profileView() {
     model.viewState.profileView.weekLog = model.viewState.profileView.weekLog
 
    appDiv.innerHTML = /*HTML*/ `
-   <div><h1 class="center">@${model.data.users[0].username}</h1></div>
+   <div><h1 class="center">@${model.data.users.username}</h1></div>
    <hr>
    <label><h1 onclick="changePage('logView')" class="logpageButton";>+</h1></label>
    <div class="profilePictureJustForShow"></div>
