@@ -53,6 +53,7 @@ function logView () {
   drinkList.addEventListener('click', event => {
     if (event.target.tagName === 'LI') {
       const { name, size, caffeine } = event.target.dataset;
+      model.viewState.logView.selectedDrink = { name, size, caffeine };
       drinkInfo.innerHTML =
         `<p class="drink-title">${name}</p>
          <p class="drink-info">Size: ${size}</p>
@@ -137,8 +138,9 @@ function saveLog () {
     logData[fieldName] = field.value;
   });
 
+  logData.drinkList = model.viewState.logView.selectedDrink;
   model.data.logList.push(logData);
-  console.log(model.data.logList);
+  console.log(JSON.stringify(model.data.logList, null, 2));
   profileView();
 }
 

@@ -15,7 +15,7 @@ const model = {
         },
 
       logView: {
-            title: "Log",
+            selectedDrink: {},
             customDrink: {},
             customSleep: {},
             journal: [],
