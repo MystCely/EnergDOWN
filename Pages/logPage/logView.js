@@ -138,7 +138,9 @@ function saveLog () {
     logData[fieldName] = field.value;
   });
 
-  logData.drinkList = model.viewState.logView.selectedDrink;
+
+
+  logData.drink = model.viewState.logView.selectedDrink;
   model.data.logList.push(logData);
   console.log(JSON.stringify(model.data.logList, null, 2));
   profileView();
