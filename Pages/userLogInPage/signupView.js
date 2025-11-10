@@ -10,15 +10,15 @@ function signupView() {
         </h1>
         
         <div>
-            <input class="input-field" onchange="" type="text" placeholder="Username">
+            <input class="input-field-login-signup" onchange="" type="text" placeholder="Username">
             <br>
-            <input class="input-field" onchange="" type="password" placeholder="Password">
+            <input class="input-field-login-signup" onchange="" type="password" placeholder="Password">
             <br>
-            <input class="input-field" onchange="" type="password" placeholder="Confirm password">
+            <input class="input-field-login-signup" onchange="" type="password" placeholder="Confirm password">
         </div>
         
         <div class="btn-container center">
-            <button onclick=SignUpButton()>Sign up</button>
+            <button class="hover-btn" onclick=SignUpButton()>Sign up</button>
         </div>
       </div>
       

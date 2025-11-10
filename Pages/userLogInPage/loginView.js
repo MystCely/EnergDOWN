@@ -3,17 +3,19 @@
 function loginView() {
     appDiv.innerHTML = /*HTML*/`
     <section class="main-container center">
+        <div class="input-bkg"></div>
         <div class="center flex-column">
           <h1 class="logIn-header">
-          EnergDown
+          EnergDown  
           </h1>
-          <div>
-              <input class="input-field" type="text" placeholder="Username" onchange="saveUserName(this.value)">
+          <img class="log-in-logo" src="img/ChatGPT Image Nov 10, 2025, 12_31_17 PM.png">
+          <div class="input-container">
+              <input class="input-field-login-signup" type="text" placeholder="Username" onchange="saveUserName(this.value)">
               <br>
-              <input class="input-field" type="password" placeholder="Password" onchange="savePassword(this.value)">
+              <input class="input-field-login-signup" type="password" placeholder="Password" onchange="savePassword(this.value)">
           </div>
           <div class="btn-container center">
-            <button onclick="logInButton()">Log in</button>
+            <button class="hover-btn" onclick="logInButton()">Log in</button>
           </div>
         </div>
         

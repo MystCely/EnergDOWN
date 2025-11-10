@@ -1,6 +1,12 @@
 body {
     font-family: Inter, sans-serif;
     margin: 0;
+    background-color: #d5b195;
+    background-image: url(img/Coffee.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -4;
+    
 }
 
 /* used in logView */
@@ -26,15 +32,21 @@ hr {
 
 /* default button design */
 button {
-    border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
+    border: solid;
+    border-color: #512e1b;
+    border-width: 2px;
+    background-color: #512e1b;
+    font-weight: bold;
+    color: #d5b195;
+    border-radius: 10px;
+    padding: 10px 15px;
     margin: 10px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: lightgray;
+    background-color: #d5b195;
+    color: #512e1b;
 }
 
 .btn-container {
