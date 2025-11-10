@@ -10,11 +10,11 @@ function signupView() {
         </h1>
         
         <div>
-            <input class="input-field-login-signup" onchange="" type="text" placeholder="Username">
+            <input id="inputUserN" class="input-field-login-signup" onchange="" type="text" placeholder="Username" value="${model.viewState.signUpView.username}">
             <br>
-            <input class="input-field-login-signup" onchange="" type="password" placeholder="Password">
+            <input id="inputpassW" class="input-field-login-signup" onchange="" type="password" placeholder="Password" value="${model.viewState.signUpView.password}">
             <br>
-            <input class="input-field-login-signup" onchange="" type="password" placeholder="Confirm password">
+            <input id="inputpasswCheck" class="input-field-login-signup" onchange="" type="password" placeholder="Confirm password" value="${model.viewState.signUpView.confirmpassword}">
         </div>
         
         <div class="btn-container center">
@@ -29,13 +29,39 @@ function signupView() {
 function SignUpButton() {
     // const firstName = model.viewState.firstName;
     // const lastName = model.viewState.lastname;
-    const username = model.username;
+    //const username = model.username;
     // const email = model.email;
     // const birthdate = model.birthday;
-    const password = model.password;
-    const confpassword = model.confPassword;
+    //const password = model.password;
+    //const confpassword = model.confPassword;
 
     
     
 
 }
+
+function SignUpButton(){
+    const NewUserName = document.getElementById('inputUserN').value
+    const NewPassWord = document.getElementById('inputpassW').value
+
+    model.viewState.signUpView.username = NewUserName;
+    model.viewState.signUpView.password = NewPassWord;
+
+    model.data.users.push({id: giveId(), admin: false, username: NewUserName, password: NewPassWord})
+
+    model.viewState.signUpView.username = '';
+    model.viewState.signUpView.password = '';
+
+    document.getElementById('inputUserN').value = '';
+    document.getElementById('inputpassW').value = '';
+     document.getElementById('inputpasswCheck').value = '';
+
+
+
+
+    changePage('logInView')
+    
+
+
+}
+
