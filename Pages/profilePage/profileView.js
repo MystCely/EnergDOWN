@@ -1,13 +1,7 @@
-
-
-
 function profileView() {
+    model.viewState.profileView.weekLog
 
-    
-    
-    model.viewState.profileView.weekLog //= model.viewState.profileView.weekLog
-
-   appDiv.innerHTML = /*HTML*/ `
+    appDiv.innerHTML = /*HTML*/ `
    <div><h1 class="center">@${getLoggedInUser()}</h1></div>
    <hr>
    <label><h1 onclick="changePage('logView')" class="logpageButton";>+</h1></label>
@@ -53,12 +47,6 @@ function profileView() {
 
     
     
-    <div class="testbuttons">
-    <button onclick="addCaffeine(80)">kaffe (80mg)</button>
-    <button onclick="addCaffeine(40)">te (40mg)</button>
-    <button onclick="addCaffeine(120)">Energidrikk (120mg)</button>
-    </div>
-    
     <h2 class="ProgressHeader">Progress</h2>
     <div class="" id="chartContainer"
         style="
@@ -77,46 +65,47 @@ function profileView() {
    
    `;
 
-   const daySelect = document.getElementById("choose");
-   daySelect.value = model.viewState.profileView.selectedDay;
+    const daySelect = document.getElementById("choose");
+    daySelect.value = model.viewState.profileView.selectedDay;
 
-   daySelect.addEventListener("change", () => {
-    model.viewState.profileView.selectedDay = daySelect.value;;
-    updateDayInputs();
-    SaveGoals();
-});
-
-
-   // peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
-   peptalkButton() 
-   updateCaffeineDisplay()
-   renderChart()
+    daySelect.addEventListener("change", () => {
+    model.viewState.profileView.selectedDay = daySelect.value;
+    updateDayInputs(); // oppdater koffein for valgt dag
+    SaveGoals(); // oppdater mål for valgt dag
+    });
 
 
-   let input = document.getElementById('GoalText');
-   let AddToListButton = document.getElementById('AddToListButton');
+    // peptalkButton() //kjører hvergang man går inn og ut av siden uten å trykke på knapp
+    peptalkButton()
+    updateCaffeineDisplay()
+    updateCaffeineFromLogList();
+    renderChart()
 
-   
+
+    let input = document.getElementById('GoalText');
+    let AddToListButton = document.getElementById('AddToListButton');
 
 
-AddToListButton.addEventListener('click', () => {
-    let GoalText = input.value.trim();
-    if(GoalText === '') return;
 
-    
-    model.viewState.profileView.personalGoal.goalList.push(GoalText);
 
-    
-    const day = model.viewState.profileView.selectedDay;
-    model.viewState.profileView.personalGoal.daily[day].push(GoalText);
+    AddToListButton.addEventListener('click', () => {
+        let GoalText = input.value.trim();
+        if (GoalText === '') return;
 
-    input.value = '';
-    input.focus();
 
-    SaveGoals();
-});
+        model.viewState.profileView.personalGoal.goalList.push(GoalText);
 
-SaveGoals()
+
+        const day = model.viewState.profileView.selectedDay;
+        model.viewState.profileView.personalGoal.daily[day].push(GoalText);
+
+        input.value = '';
+        input.focus();
+
+        SaveGoals();
+    });
+
+    SaveGoals()
 
 
 }

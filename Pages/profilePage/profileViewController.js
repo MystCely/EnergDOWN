@@ -24,22 +24,19 @@ function SaveGoals() {
 
 
 
-function addCaffeine(amount){
-    const progress = model.viewState.profileView.progress;
+function updateCaffeineDisplay() {
     const weekLog = model.viewState.profileView.weekLog;
     const day = model.viewState.profileView.selectedDay;
 
-    weekLog[day] += amount;
+    let todaysCaffeine = weekLog[day] || 0;
+    let totalCaffeine = 0;
 
-    progress.totalCaffeine += amount;
+    for (let d in weekLog) {
+        if (weekLog[d]) totalCaffeine += weekLog[d];
+    }
 
-    updateDayInputs();
-
-}
-
-function updateCaffeineDisplay() {
-  document.getElementById("showTodayCaffeine").innerText = model.viewState.profileView.progress.todaysCaffeine + " mg";
-  document.getElementById("ShowTotalCaffeine").innerText = model.viewState.profileView.progress.totalCaffeine + " mg";
+    document.getElementById("showTodayCaffeine").innerText = todaysCaffeine + " mg";
+    document.getElementById("ShowTotalCaffeine").innerText = totalCaffeine + " mg";
 }
 
 
@@ -74,11 +71,43 @@ function renderChart() {
 function updateDayInputs() {
     const day = model.viewState.profileView.selectedDay;
     const weekLog = model.viewState.profileView.weekLog;
-    const progress = model.viewState.profileView.progress;
 
-    document.getElementById("showTodayCaffeine").innerText = weekLog[day] + " mg";
+    // Hent koffein for valgt dag
+    let todaysCaffeine = weekLog[day] || 0;
 
-    document.getElementById("ShowTotalCaffeine").innerText = progress.totalCaffeine + " mg"
+    // Summer koffein for hele uken med for…of-løkke
+    let totalCaffeine = 0;
+    const caffeineValues = Object.values(weekLog);
+    for (const caffeine of caffeineValues) {
+        totalCaffeine += caffeine;
+    }
 
-    renderChart()
+    // Oppdater visning
+    document.getElementById("showTodayCaffeine").innerText = todaysCaffeine + " mg";
+    document.getElementById("ShowTotalCaffeine").innerText = totalCaffeine + " mg";
+
+    // Oppdater diagrammet
+    renderChart();
+}
+
+
+function updateCaffeineFromLogList() {
+    const weekLog = model.viewState.profileView.weekLog;
+
+    for (let day in weekLog) weekLog[day] = 0;
+
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    // Summer koffein fra alle logger
+    model.data.logList.forEach(log => {
+        if (!log.drink || !log.drink.caffeine || !log.date) return;
+
+        const logDate = new Date(log.date);
+        const day = dayNames[logDate.getDay()];
+
+        const caffeine = Number(log.drink.caffeine);
+        if (!isNaN(caffeine)) weekLog[day] += caffeine;
+    });
+
+    updateDayInputs();
 }

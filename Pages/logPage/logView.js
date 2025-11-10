@@ -28,7 +28,7 @@ function logView () {
       </div>
     </div>
     <div class="log-btn-container">
-      <button id="saveLogBtn" onclick="saveLog()">Add</button>
+      <button id="saveLogBtn" onclick="saveLog();">Add</button>
     </div>
     
     `;
@@ -136,13 +136,15 @@ function saveLog () {
   fields.forEach(field => {
     const fieldName = field.dataset.field;
     logData[fieldName] = field.value;
+    
   });
 
   // selected drink from drinkList
   logData.drink = model.viewState.logView.selectedDrink;
   model.data.logList.push(logData);
   console.log(JSON.stringify(model.data.logList, null, 2));
-  profileView();
+  updateCaffeineFromLogList()
+  profileView()
 }
 
 function backToProfile() {
