@@ -1,6 +1,6 @@
 .logpageButton{
     position: fixed;
-    top: 2%;
+    top: -1%;
     right: 15%;
     width: 30px;
     cursor: pointer;
@@ -10,7 +10,7 @@
     position: fixed;
     height: 50px;
     width: 50px;
-    top: 7%;
+    top: 2.5%;
     right: 10%;
     border: solid 1px black;
     border-radius: 50%;
@@ -34,18 +34,26 @@
     position: fixed;
     top: 18%;
     right: 25%;
+    color: #512e1b;
 }
 
 .daylieGoals{
     position: fixed;
     top: 24%;
     right: 37%;
+    color: #512e1b;
+    font-size: 25px;
 }
 
 .caffianAmount{
     position: fixed;
     bottom: 15%;
     right: 35%;
+    font-size: 25px;
+    
+    color: #512e1b; /* Set the text color (fill) */
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    
 }
 
 .goalsInput{
@@ -81,18 +89,68 @@
 }
 
 .peptalkPops{
-    position: fixed;
+    display: flex;
+    justify-content: center;
     top: 15%;
     left: 45%;
     font-family: cursive;
+    font-size: 50px;
+    color: greenyellow; /* Set the text color (fill) */
+    -webkit-text-stroke: 2px black;
 }
 .ProgressHeader{
     position: fixed;
     top: 18%;
     left: 20%;
+    color: #512e1b;
 
 
 }
-.center {
+.profile-header {
     color: #512e1b;
+    display: flex;
+    justify-content: center;
+    background-color: #512e1b;
+    margin: 0;
+    height: 120px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 3px;
+    
+    
+}
+
+.home-button {
+    display: flex;
+    color: #512e1b;
+    height: 0px;
+    margin-top: 20px;
+    margin-left: 20px;
+    
+    
+}
+
+.Profile-name {
+    display: flex;
+    justify-content: center;
+    color: #d5b195;
+    margin: 20px;
+    
+
+}
+.Profile-pluss-logo {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    top: 2.5%;
+    right: 15%;
+    cursor: pointer;
+    
+}
+
+.Profile-pluss-logo:hover {
+    opacity: 0.7;
+    color: #d5b195;
+    
+    
 }

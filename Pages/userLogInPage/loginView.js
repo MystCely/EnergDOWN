@@ -10,9 +10,9 @@ function loginView() {
           </h1>
           <img class="log-in-logo" src="img/ChatGPT Image Nov 10, 2025, 12_31_17 PM.png">
           <div class="input-container">
-              <input class="input-field-login-signup" type="text" placeholder="Username" onchange="saveUserName(this.value)">
+              <input class="input-field-login-username" type="text" placeholder="Username" onchange="saveUserName(this.value)">
               <br>
-              <input class="input-field-login-signup" type="password" placeholder="Password" onchange="savePassword(this.value)">
+              <input class="input-field-login-password" type="password" placeholder="Password" onchange="savePassword(this.value)">
           </div>
           <div class="btn-container center">
             <button class="hover-btn" onclick="logInButton()">Log in</button>

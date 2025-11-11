@@ -1,0 +1,20 @@
+.logo-sign-up {
+    height: 110px;
+    display: flex;
+    margin-left: 450px;
+    margin-top: -120px;
+}
+
+.input-field-login-signup {
+    height: 40px;
+    width: 200px;
+    color: #ffffff;
+    background-color: #93745d;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: black;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    border-width: 2px;
+}

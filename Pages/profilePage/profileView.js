@@ -2,10 +2,16 @@ function profileView() {
     model.viewState.profileView.weekLog
 
     appDiv.innerHTML = /*HTML*/ `
-   <div><h1 class="center">@${getLoggedInUser()}</h1></div>
-   <hr>
-   <label><h1 onclick="changePage('logView')" class="logpageButton";>+</h1></label>
-   <div class="profilePictureJustForShow"></div>
+    
+   <div class="profile-header"> 
+   
+   <h1 class="Profile-name">@${getLoggedInUser()}</h1></div>
+   
+   <label><img class="Profile-pluss-logo" src="img/PlussLogo.png" onclick="changePage('logView')">
+   </label>
+   <div class="profilePictureJustForShow">
+   <img class="profilePictureJustForShow" src="img/Screenshot 2025-11-11 140343.png">
+   </div>
 
    <button class="Peptalks" onclick="peptalkButton()">PepTalks</button>
    <div class="peptalkPops" id="peptalktext"></div>

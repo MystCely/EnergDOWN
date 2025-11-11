@@ -6,7 +6,7 @@ function logView () {
           <img src="../../img/reset-btn.png" alt="reset button" class="reset-btn" onclick="resetLog()">
            <h1 class="log-header">Log</h1>
         </div>
-        <hr>
+        
       <div class="drink-list-container">
         <ul id="drinkList"></ul>
         <div class="log-container">
