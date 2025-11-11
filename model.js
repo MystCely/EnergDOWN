@@ -86,7 +86,7 @@ const model = {
             {name: "Normal cup of coffee", size: "240ml", caffeine: 95 + "mg"},
             {name: "Normal cup of tea", size: "180ml", caffeine: 40 + "mg"},
             {name: "Starbucks Cappuccino", size: "220ml", caffeine: 90 + "mg"},
-            {name: "Espresso Shot", size: "30ml", caffeine: 63},
+            {name: "Espresso Shot", size: "30ml", caffeine: 63 + "mg"},
             {name: "Standard Redbull", size: "250ml", caffeine: 80 + "mg"},
             {name: "Monster", size: "500ml", caffeine: 160 + "mg"},
             {name: "Monster Ultra", size: "500ml", caffeine: 150 + "mg"},
