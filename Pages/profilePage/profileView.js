@@ -12,7 +12,7 @@ function profileView() {
    <div class="profilePictureJustForShow">
    <img class="profilePictureJustForShow" src="img/Screenshot 2025-11-11 140343.png">
    </div>
-   <button onclick="changePage('logged')">log</button>
+   <button onclick="changePage('logged')">My log</button>
    <div class="profilePictureJustForShow"></div>
 
    <button class="Peptalks" onclick="peptalkButton()">PepTalks</button>
