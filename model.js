@@ -1,6 +1,6 @@
 const model = {
     app: {
-        currentPage: "logged",
+        currentPage: "welcomeView",
         currentUserId: null,
     },
     viewState: {
