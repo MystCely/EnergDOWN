@@ -2,6 +2,7 @@ function profileView() {
     model.viewState.profileView.weekLog
 
     appDiv.innerHTML = /*HTML*/ `
+<<<<<<< Updated upstream
     
    <div class="profile-header"> 
    
@@ -12,6 +13,13 @@ function profileView() {
    <div class="profilePictureJustForShow">
    <img class="profilePictureJustForShow" src="img/Screenshot 2025-11-11 140343.png">
    </div>
+=======
+   <div><h1 class="center">@${getLoggedInUser()}</h1></div>
+   <hr>
+   <label><h1 onclick="changePage('logView')" class="logpageButton";>+</h1></label>
+   <button onclick="changePage('logged')">log</button>
+   <div class="profilePictureJustForShow"></div>
+>>>>>>> Stashed changes
 
    <button class="Peptalks" onclick="peptalkButton()">PepTalks</button>
    <div class="peptalkPops" id="peptalktext"></div>

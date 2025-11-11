@@ -27,6 +27,10 @@ function mainView() {
         logView();
     }
 
+      else if (currentPage === 'logged') {
+        loggedView();
+    }
+
 }
 
 window.onload = () => mainView();

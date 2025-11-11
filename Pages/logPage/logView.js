@@ -128,7 +128,7 @@ function logView () {
 
 }
 
-function saveLog () {
+function saveLog() {
   // find all elements with data-field
   const fields = document.querySelectorAll('[data-field]');
   const logData = {};
@@ -145,6 +145,7 @@ function saveLog () {
   console.log(JSON.stringify(model.data.logList, null, 2));
   updateCaffeineFromLogList()
   profileView()
+
 }
 
 function backToProfile() {
