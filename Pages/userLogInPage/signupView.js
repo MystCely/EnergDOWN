@@ -10,13 +10,8 @@ function signupView() {
         </h1>
         <img  class="logo-sign-up" src="img/ChatGPT Image Nov 10, 2025, 12_31_17 PM.png" alt="">
         
-<<<<<<< Updated upstream
         <div class="input-container">
             <input id="inputUserN" class="input-field-login-signup" onchange="" type="text" placeholder="Username" value="${model.viewState.signUpView.username}">
-=======
-        <div>
-            <input id="inputUserN" class="input-field-login-signup" type="text" placeholder="Username" value="${model.viewState.signUpView.username}">
->>>>>>> Stashed changes
             <br>
             <input id="inputpassW" class="input-field-login-signup" type="password" placeholder="Password" value="${model.viewState.signUpView.password}">
             <br>
