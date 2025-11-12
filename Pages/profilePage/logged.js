@@ -1,8 +1,12 @@
 function loggedView() {
   let HTML = /*HTML*/`
-    <button onclick="changePage('profileView')">back</button>
-    <h2>My Log</h2>
-    <div id="logListContainer">
+  <div class="logged-header">
+  <h2 class="mylog-txt">My Log</h2>
+  
+  </div>
+  <button class="back-btn-logged" onclick="changePage('profileView')">Back</button>
+  <div id="logListContainer">
+  
   `;
 
   if (model.data.logList.length === 0) {

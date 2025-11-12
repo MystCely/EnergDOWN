@@ -4,7 +4,7 @@ function loginView() {
     appDiv.innerHTML = /*HTML*/`
     <section class="main-container center">
         <div class="input-bkg"></div>
-        <div class="center flex-column">
+        <div class="log-in-blur center flex-column">
           <h1 class="logIn-header">
           EnergDown  
           </h1>

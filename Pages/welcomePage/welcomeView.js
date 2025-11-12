@@ -12,9 +12,9 @@ function welcomeView() {
           
       </div>
           
-      <div class="btn-container center">
-        <button onclick="changePage('logInView')">Log In</button>
-        <button onclick="changePage('signUpView')">Sign Up</button>
+      <div class="btn-container-welcome center">
+        <button class="log-in-btn" onclick="changePage('logInView')">Log In</button>
+        <button  class="sign-up-btn" onclick="changePage('signUpView')">Sign Up</button>
       <div>
     </div>
     `;

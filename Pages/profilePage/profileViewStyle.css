@@ -32,27 +32,53 @@
 
 .personalGoals{
     position: fixed;
-    top: 18%;
-    right: 25%;
+    top: 20%;
+    right: 27.5%;
     color: #512e1b;
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 10px;
 }
 
 .daylieGoals{
     position: fixed;
-    top: 24%;
-    right: 37%;
-    color: #512e1b;
+    top: 28%;
+    right: 30%;
+    color: black;
     font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 10px;
+        
+}
+
+.goal-txt {
+    color: #512e1b;
+    height: 50px;
+    width: 200px;
+    padding-left: 10px;
+    padding-right: 2px;
+    margin: 0;
+    
+}
+
+.goal-list {
+    color: black;
 }
 
 .caffianAmount{
     position: fixed;
-    bottom: 15%;
-    right: 35%;
+    bottom: 10%;
+    right: 25.5%;
     font-size: 25px;
     
     color: #512e1b; /* Set the text color (fill) */
     -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 10px;
+        width: 400px;
     
 }
 
@@ -84,25 +110,30 @@
 
 .Peptalks{
     position: fixed;
-    top: 18%;
-    left: 31%;
+    top: 20%;
+    left: 29%;
 }
 
 .peptalkPops{
     display: flex;
     justify-content: center;
-    top: 15%;
+    top: 5%;
     left: 45%;
     font-family: cursive;
     font-size: 50px;
     color: greenyellow; /* Set the text color (fill) */
     -webkit-text-stroke: 2px black;
+    
 }
 .ProgressHeader{
     position: fixed;
-    top: 18%;
+    top: 20%;
     left: 20%;
     color: #512e1b;
+
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 10px;
 
 
 }
@@ -153,4 +184,32 @@
     color: #d5b195;
     
     
+}
+
+.bar-chart {
+    display: flex;
+    position: fixed;
+    
+    left: 20%;
+    align-items: flex-end;
+    height: 200px;;
+    gap: 50px;
+    margin-top: 30px;
+    bottom: 10%;
+
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 10px;
+}
+
+.Figures {
+    position: fixed;
+    left: 10%;
+    z-index: -2;
+}
+
+.mylog-btn {
+    height: 50px;
+    width: 140px;
+    font-size: larger;
 }

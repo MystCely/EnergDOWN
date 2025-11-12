@@ -6,14 +6,16 @@
     
     
     
+    
+    
 }
 
 .hover-btn {
-    background-color: #512e1b;
-    color: #d5b195;
+    background-color: rgb(212, 246, 255);
+    color: black;
     font-size: 15px;
     font-weight: bold;
-    border: #d5b195;
+    border: #512e1b;
     border-style: solid;
     border-width: 2px;
     border-radius: 10px;
@@ -83,6 +85,14 @@
     margin-top: 20px;
     
 }
+
+.log-in-blur {
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 50px
+}
+
+
 
 
 

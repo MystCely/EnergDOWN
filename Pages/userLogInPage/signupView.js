@@ -4,7 +4,7 @@ function signupView() {
     appDiv.innerHTML = /*HTML*/`
     
     <section class="main-container center">
-      <div class=" center flex-column">
+      <div class="sign-up center flex-column">
         <h1 class="logIn-header">
         Sign Up
         </h1>
@@ -15,7 +15,7 @@ function signupView() {
             <br>
             <input id="inputpassW" class="input-field-login-signup" type="password" placeholder="Password" value="${model.viewState.signUpView.password}">
             <br>
-            <input id="inputpasswCheck" class="input-field-login-signup" type="password" placeholder="Confirm password" value="${model.viewState.signUpView.confirmpassword}">
+            
         </div>
         
         <div class="btn-container center">

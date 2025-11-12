@@ -1,0 +1,24 @@
+.logged-header {
+    color: black;
+    display: flex;
+    justify-content: center;
+    background-color: #512e1b;
+    margin: 0;
+    height: 120px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+.back-btn-logged {
+    height: 100px;
+    width: 150px;
+    font-size: larger;
+}
+
+.mylog-txt {
+    display: flex;
+    justify-content: center;
+    color: #d5b195;
+    margin: 20px;
+}

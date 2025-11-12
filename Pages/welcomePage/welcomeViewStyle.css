@@ -19,6 +19,23 @@
     font-size: 115px;
     color: #512e1b; /* Set the text color (fill) */
     -webkit-text-stroke: 2px black;
+    margin: 0;
 }
 
+.btn-container-welcome {
+    background-color: rgba(255, 255, 255, 0.5); 
+        backdrop-filter: blur(10px); 
+        border-radius: 50px;
+        height: 60px;
+    
+}
+
+.log-in-btn {
+    background-color: rgb(212, 246, 255);
+    color: black;
+}
+.sign-up-btn {
+    background-color: rgb(212, 246, 255);
+    color: black;
+}
 

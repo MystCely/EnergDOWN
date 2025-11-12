@@ -12,7 +12,7 @@ function profileView() {
    <div class="profilePictureJustForShow">
    <img class="profilePictureJustForShow" src="img/Screenshot 2025-11-11 140343.png">
    </div>
-   <button onclick="changePage('logged')">My log</button>
+   <button class="mylog-btn" onclick="changePage('logged')">My log</button>
    <div class="profilePictureJustForShow"></div>
 
    <button class="Peptalks" onclick="peptalkButton()">PepTalks</button>
@@ -23,8 +23,8 @@ function profileView() {
    </div>
    
    <div class="daylieGoals">
-   <h3 >Daylie goals</h3>
-   <div class=""id="list"></div>
+   <h3 class="goal-txt">Daylie goals</h3>
+   <div class="goal-list" id="list"></div>
    </div>
    
    <div class="goalsInput">
@@ -56,16 +56,12 @@ function profileView() {
     
     
     <h2 class="ProgressHeader">Progress</h2>
-    <div class="" id="chartContainer"
-        style="
-            display: flex;
-            position: fixed;
-            top: 50%;
-            left: 20%;
-            align-items: flex-end;
-            height: 200px;;
-            gap: 25px;
-            margin-top: 30px;">
+    <div class="bar-chart" id="chartContainer">
+    </div>
+
+    <div class="Figures">
+        <img class="energybox-logo" src="img/Energiboks.png" alt="">
+        <img class="coffe-cup-logo" src="img/Kaffekopp.png" alt="">
     </div>
 
    

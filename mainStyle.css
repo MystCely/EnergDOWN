@@ -35,9 +35,9 @@ button {
     border: solid;
     border-color: #512e1b;
     border-width: 2px;
-    background-color: #512e1b;
+    background-color: rgb(212, 246, 255);
     font-weight: bold;
-    color: #d5b195;
+    color: black;
     border-radius: 10px;
     padding: 10px 15px;
     margin: 10px;
