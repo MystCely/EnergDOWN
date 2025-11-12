@@ -73,7 +73,7 @@
     font-size: 25px;
     
     color: #512e1b; /* Set the text color (fill) */
-    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    -webkit-text-stroke: 0.3px black;
 
     background-color: rgba(255, 255, 255, 0.5); 
         backdrop-filter: blur(10px); 

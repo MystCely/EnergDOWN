@@ -15,6 +15,7 @@ function signupView() {
             <br>
             <input id="inputpassW" class="input-field-login-signup" type="password" placeholder="Password" value="${model.viewState.signUpView.password}">
             <br>
+            <input id="inputpasswCheck" class="input-field-login-signup" onchange="" type="password" placeholder="Confirm password" value="${model.viewState.signUpView.confirmpassword}">
             
         </div>
         
