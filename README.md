@@ -1,8 +1,6 @@
-# EnergDOWN — Caffeine Tracker (School Project)
+# EnergDOWN - Caffeine Tracker (School Project)
 
-A multi-view **vanilla JavaScript** project built as part of **GET Academy — Emne 2**.  
-
----
+A multi-view **vanilla JavaScript** project built as part of **GET Academy - Emne 2**.  
 
 ## Tech Stack
 
@@ -11,8 +9,6 @@ A multi-view **vanilla JavaScript** project built as part of **GET Academy — E
 - JavaScript (no frameworks)  
 - Model–View–Controller-style structure  
 - Local state management  
-
----
 
 ## Purpose
 
